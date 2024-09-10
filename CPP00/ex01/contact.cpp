@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 17:19:04 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/02 17:28:32 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/09/10 19:44:04 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,32 @@
 
 //setters
 
-void	Contact::setfirstname(const std::string &firstname)
+void	Contact::setfirstname(std::string &firstname)
 {
 	this->firstname = firstname;
 }
 
-void	Contact::setlastname(const std::string &lastname)
+void	Contact::setlastname(std::string &lastname)
 {
 	this->lastname = lastname;
 }
 
-void	Contact::setnickname(const std::string &nickname)
+void	Contact::setnickname(std::string &nickname)
 {
 	this->nickname = nickname;
 }
 
-void	Contact::setphonenumber(const std::string &phonenumber)
+void	Contact::setphonenumber(std::string &phonenumber)
 {
 	this->phonenumber = phonenumber;
 }
 
-void	Contact::setdarkestsecret(const std::string &setdarkestsecret)
+void	Contact::setdarkestsecret(std::string &darkestsecret)
 {
 	this->darkestsecret = darkestsecret;
 }
 
 
-//getters
 
 std::string Contact::getfirstname() const
 {

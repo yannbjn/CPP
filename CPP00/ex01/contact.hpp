@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 16:48:41 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/02 17:30:23 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/09/10 15:44:19 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ class Contact
 	std::string darkestsecret;
 
   public:
-	void setfirstname(const std::string &firstname);
-	void setlastname(const std::string &lastname);
-	void setnickname(const std::string &nickname);
-	void setphonenumber(const std::string &phonenumber);
-	void setdarkestsecret(const std::string &darkestsecret);
+	void setfirstname(std::string &firstname);
+	void setlastname(std::string &lastname);
+	void setnickname(std::string &nickname);
+	void setphonenumber(std::string &phonenumber);
+	void setdarkestsecret(std::string &darkestsecret);
 
 	std::string getfirstname() const;
 	std::string getlastname() const;

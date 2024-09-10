@@ -6,11 +6,11 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 16:50:23 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/02 19:28:02 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/09/10 18:03:12 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 #include <iostream>
 
 void menu() {
@@ -25,31 +25,34 @@ void menu() {
 
 int main()
 {
-    Phonebook phonebook;
+    PhoneBook PhoneBook;
     std::string command;
 
     system("clear");
     menu();
     while (true)
     {
-        std::cout << BOLD << BLUE << "Enter a command: " << MAGENTA;
+        if (std::cin.eof()){
+            std::cout << std::endl;
+            break ; 
+        }
+        std::cout << BOLD << BLUE << "Enter a command: " << RESET;
         std::getline(std::cin, command);
-
-        if (command == "ADD")
-        {
-            phonebook.addcontact();
+        if (command == "ADD"){
+            PhoneBook.addcontact();
         }
-        else if (command == "SEARCH")
-        {
-            phonebook.searchcontacts();
+        else if (command == "SEARCH"){
+            PhoneBook.searchcontacts();
         }
-        else if (command == "EXIT")
-        {
+        else if (command == "EXIT"){
             break;
         }
-        else
-        {
+        else if (command == ""){
+            std::cout << BOLD << RED << "You must enter a command." << RESET << std::endl;
+        }
+        else{
             std::cout << BOLD << RED << "Unknown command." << RESET << std::endl;
+            menu();
         }
     }
     return 0;
