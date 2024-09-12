@@ -1,4 +1,4 @@
-SRC = main.cpp
+SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
