@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/02 16:48:47 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/13 20:14:23 by yabejani         ###   ########.fr       */
+/*   Created: 2024/09/13 11:42:58 by yabejani          #+#    #+#             */
+/*   Updated: 2024/09/13 18:38:00 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#include "Sed.hpp"
 
-#include "Contact.hpp"
-#include "colors.hpp"
-#include "utils.hpp"
-
-class PhoneBook 
+int main(int argc, char **argv)
 {
-	public:
-		PhoneBook();
-		~PhoneBook();
-		void addcontact();
-		void searchcontacts() const;
-		void displaycontact(int index) const;
-	private:
-		Contact contacts[8];
-		int contactindex;
-		int contactcount;
-};
-
-#endif
+	if (argc != 4)
+	{
+		std::cout << "You must proovide 1 file to open and 2 strings for the program to work." << std::endl << "Usage: ./sed [filename] [s1] [s2]" << std::endl;
+		return (1);
+	}
+	replace(argv[1], argv[2], argv[3]);
+	return (0);
+}

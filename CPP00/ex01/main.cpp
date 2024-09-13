@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 16:50:23 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/10 18:03:12 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/09/13 19:20:31 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main()
     PhoneBook PhoneBook;
     std::string command;
 
-    system("clear");
+    //system("clear");
     menu();
     while (true)
     {

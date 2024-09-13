@@ -1,16 +1,16 @@
-NAME        =   horde
+NAME		=   sed
 
-CC          =   c++
+CC			=   c++
 
-FLAG        =   -std=c++98 -Wall -Wextra -Werror -pedantic
+FLAG		=   -std=c++98 -Wall -Wextra -Werror -pedantic
 
-C_FILES     =   main.cpp Zombie.cpp zombieHorde.cpp
+C_FILES		=   main.cpp Sed.cpp
 
-OBJ_DIR     =   builds
+OBJ_DIR		=   builds
 
-OBJS        =   $(addprefix $(OBJ_DIR)/, $(C_FILES:.cpp=.o))
+OBJS		=   $(addprefix $(OBJ_DIR)/, $(C_FILES:.cpp=.o))
 
-DEPS        =   $(OBJS:.o=.d)
+DEPS		=   $(OBJS:.o=.d)
 
 all:		$(NAME)
 

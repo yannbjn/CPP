@@ -7,8 +7,8 @@ HumanB::~HumanB() {}
 void	HumanB::setWeapon(Weapon &weapon) {_weapon = &weapon;}
 
 void	HumanB::attack() const {
-	if (this->_weapon && !this->_weapon->getType().empty())
-		std::cout << _name + " attacks with their " + _weapon->getType() << std::endl;
+	if (this->_weapon)
+		std::cout << _name << " attacks with their " << _weapon->getType() << std::endl;
 	else
 		std::cout << _name << " can't attack without a weapon !" << std::endl;
 }

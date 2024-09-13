@@ -1,21 +1,35 @@
-NAME = megaphone
-CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+NAME		=   megaphone
 
-SRC = megaphone.cpp
-OBJ = $(SRC:.cpp=.o)
+CC			=   c++
 
-all: $(NAME)
+FLAG		=   -std=c++98 -Wall -Wextra -Werror -pedantic
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+C_FILES		=   megaphone.cpp 
+OBJ_DIR		=   builds
+
+OBJS		=   $(addprefix $(OBJ_DIR)/, $(C_FILES:.cpp=.o))
+
+DEPS		=   $(OBJS:.o=.d)
+
+all:		$(NAME)
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+
+$(OBJ_DIR)/%.o: %.cpp | $(OBJ_DIR)
+	$(CC) $(FLAG) -MMD -MP -c $< -o $@
+
+$(NAME):	$(OBJS)
+	$(CC) $(OBJS) -o $(NAME)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ_DIR)/*.o $(DEPS) rm -rf $(OBJ_DIR)
 
-fclean: clean
+fclean:	clean
 	rm -f $(NAME)
 
-re: fclean all
+re:	fclean all
 
-.PHONY: all clean fclean re
+-include $(DEPS)
+
+.PHONY:	all clean fclean re

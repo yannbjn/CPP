@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 16:54:08 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/10 19:47:04 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/09/13 20:11:45 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,6 @@ PhoneBook::PhoneBook() : contactindex(0), contactcount(0){}
 
 PhoneBook::~PhoneBook(){
     std::cout << BOLD << GREEN << "PhoneBook closed, bye bye." << RESET << std::endl;
-}
-
-bool ft_isdigit(const std::string &number)
-{
-    for (char ch : number) {
-        if (!(ch >= '0' && ch <= '9')) {
-            return false;
-        }
-    }
-    return true;
 }
 
 void	PhoneBook::addcontact() 
@@ -123,14 +113,20 @@ void	PhoneBook::searchcontacts() const
     int flag = 0;
     while (!flag){
         int index;
+        std::string test;
         std::cout << BOLD << BLUE << "Enter index to display details: " << RESET;
-        std::cin >> index;
+        std::cin >> test;
+        index = stringToInt(test);
         if (std::cin.eof())
             break ;
         std::cin.ignore();
+        if (!ft_isdigit(test)){
+            std::cout << BOLD << RED << "Invalid index." << std::endl << RESET;
+            continue ;
+        }
         if (index < 0 || index >= this->contactcount)
 	    {
-            std::cout << BOLD << RED << "Invalid index." << std::endl << RESET ;
+            std::cout << BOLD << RED << "Invalid index." << std::endl << RESET;
         }
 	    else
 	    {
