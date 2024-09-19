@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 16:54:08 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/13 20:11:45 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/09/19 14:02:13 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,20 +94,20 @@ void	PhoneBook::searchcontacts() const
         std::cout << BOLD << RED << "PhoneBook is empty." << RESET << std::endl;
         return;
     }
-    std::cout << BOLD << BLUE << "+-------+------------+------------+------------+" << std::endl;
-    std::cout << "| " << std::setw(2) << "Index"
-              << " | " << std::setw(10) << "First Name"
-              << " | " << std::setw(10) << "Last Name"
-              << " | " << std::setw(10) << "Nickname" << " |" << std::endl;
-    std::cout << "+-------+------------+------------+------------+" << RESET << std::endl;
+    std::cout << BOLD << BLUE << "+----------+----------+----------+----------+" << std::endl;
+    std::cout << "|" << std::setw(10) << "Index"
+              << "|" << std::setw(10) << "First Name"
+              << "|" << std::setw(10) << "Last Name"
+              << "|" << std::setw(10) << "Nickname" << "|" << std::endl;
+    std::cout << "+----------+----------+----------+----------+" << RESET << std::endl;
 
     for (int i = 0; i < this->contactcount; i++)
 	{
-        std::cout << BOLD << BLUE << "|" << BOLD << GREEN << std::setw(7) << i << BOLD << BLUE << "|" << RESET;
-        std::cout << YELLOW << std::setw(12) << (this->contacts[i].getfirstname().length() > 10 ? this->contacts[i].getfirstname().substr(0, 9) + "." : this->contacts[i].getfirstname()) << BOLD << BLUE << "|" << RESET;
-        std::cout << YELLOW << std::setw(12) << (this->contacts[i].getlastname().length() > 10 ? this->contacts[i].getlastname().substr(0, 9) + "." : this->contacts[i].getlastname()) << BOLD << BLUE << "|" << RESET;
-        std::cout << YELLOW << std::setw(12) << (this->contacts[i].getnickname().length() > 10 ? this->contacts[i].getnickname().substr(0, 9) + "." : this->contacts[i].getnickname()) << BOLD << BLUE << "|" << RESET << std::endl;
-        std::cout << BOLD << BLUE << "+-------+------------+------------+------------+" << RESET << std::endl;
+        std::cout << BOLD << BLUE << "|" << BOLD << GREEN << std::setw(10) << i << BOLD << BLUE << "|" << RESET;
+        std::cout << YELLOW << std::setw(10) << (this->contacts[i].getfirstname().length() > 10 ? this->contacts[i].getfirstname().substr(0, 9) + "." : this->contacts[i].getfirstname()) << BOLD << BLUE << "|" << RESET;
+        std::cout << YELLOW << std::setw(10) << (this->contacts[i].getlastname().length() > 10 ? this->contacts[i].getlastname().substr(0, 9) + "." : this->contacts[i].getlastname()) << BOLD << BLUE << "|" << RESET;
+        std::cout << YELLOW << std::setw(10) << (this->contacts[i].getnickname().length() > 10 ? this->contacts[i].getnickname().substr(0, 9) + "." : this->contacts[i].getnickname()) << BOLD << BLUE << "|" << RESET << std::endl;
+        std::cout << BOLD << BLUE << "+----------+----------+----------+----------+" << RESET << std::endl;
     }
 
     int flag = 0;

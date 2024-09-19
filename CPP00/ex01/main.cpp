@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 16:50:23 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/13 19:20:31 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/09/19 13:53:53 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main()
     {
         if (std::cin.eof()){
             std::cout << std::endl;
-            break ; 
+            break ;
         }
         std::cout << BOLD << BLUE << "Enter a command: " << RESET;
         std::getline(std::cin, command);
