@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 12:28:30 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/19 16:58:41 by frite            ###   ########.fr       */
+/*   Updated: 2024/09/19 19:26:08 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ class Fixed
 		bool	operator!=(Fixed const &rhs) const;
 
 		//arithmetic operator overload
-		Fixed operator+(Fixed const &rhs);
-		Fixed operator-(Fixed const &rhs);
-		Fixed operator*(Fixed const &rhs);
-		Fixed operator/(Fixed const &rhs);
+		Fixed operator+(Fixed const &rhs) const;
+		Fixed operator-(Fixed const &rhs) const;
+		Fixed operator*(Fixed const &rhs) const;
+		Fixed operator/(Fixed const &rhs) const;
 
 		//++ -- operator overload
 		Fixed	&operator++(); //pre incr

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 14:34:06 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/19 17:21:39 by frite            ###   ########.fr       */
+/*   Updated: 2024/09/19 19:33:47 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ float	Fixed::toFloat() const
 
 Fixed	&Fixed::operator=(Fixed const &rhs)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	//std::cout << "Copy assignment operator called" << std::endl;
 	this-> _valueFixed = rhs.getRawBits();
 	return (*this); //dereference pointeur this to return a reference
 }
@@ -122,24 +122,24 @@ bool	Fixed::operator!=(Fixed const &rhs) const
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Fixed	Fixed::operator+(Fixed const &rhs)
+Fixed	Fixed::operator+(Fixed const &rhs) const
 {
-	 return (Fixed(this->_valueFixed += rhs._valueFixed));
+	 return (Fixed(this->toFloat() + rhs.toFloat()));
 }
 
-Fixed	Fixed::operator-(Fixed const &rhs)
+Fixed	Fixed::operator-(Fixed const &rhs) const
 {
-	 return (Fixed(this->_valueFixed -= rhs._valueFixed));
+	 return (Fixed(this->toFloat() - rhs.toFloat()));
 }
 
-Fixed	Fixed::operator*(Fixed const &rhs)
+Fixed	Fixed::operator*(Fixed const &rhs) const
 {
-	 return (Fixed(this->_valueFixed *= rhs._valueFixed));
+	 return (Fixed(this->toFloat() * rhs.toFloat()));
 }
 
-Fixed	Fixed::operator/(Fixed const &rhs)
+Fixed	Fixed::operator/(Fixed const &rhs) const
 {
-	 return (Fixed(this->_valueFixed /= rhs._valueFixed));
+	 return (Fixed(this->toFloat() / rhs.toFloat()));
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -163,12 +163,14 @@ Fixed	Fixed::operator++(int) // post incr
 	return (tmp);
 }
 
-Fixed	Fixed::operator--(int)
+Fixed	Fixed::operator--(int) // post incr
 {
 	Fixed tmp = *this;
 	--*this;
 	return (tmp);
 }
+
+
 
 Fixed	&Fixed::min(Fixed &n1, Fixed &n2)
 {
