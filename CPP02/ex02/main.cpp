@@ -6,7 +6,7 @@
 /*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:29:36 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/19 17:18:18 by frite            ###   ########.fr       */
+/*   Updated: 2024/09/19 17:55:21 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,14 @@ int main( void )
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
+
+	std::cout << "//////////////////////////////////////////////" << std::endl;
+	Fixed const c( Fixed(30) / Fixed (10));
+	int i = c.toInt();
+	std::cout << i << std::endl;
+	Fixed const d( Fixed(30) / Fixed (0));
+	i = d.toInt();
+	std::cout << i << std::endl;
+
 	return 0;
 }
