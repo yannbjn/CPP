@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:29:36 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/19 19:32:57 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/09/20 14:03:48 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ int main( void )
 	std::cout << Fixed::max( a, b ) << std::endl;
 
 	std::cout << "//////////////////////////////////////////////" << std::endl;
-	Fixed const c( Fixed(30) / Fixed (10));
+	Fixed c( Fixed(30) / Fixed (10));
 	int i = c.toInt();
 	std::cout << i << std::endl;
-	Fixed const d( Fixed(30) / Fixed (1));
+	Fixed d( Fixed(30) / Fixed (1));
 	i = d.toInt();
 	std::cout << i << std::endl;
-	std::cout << Fixed::min 
+	std::cout << Fixed::min(d, c) << std::endl;
 
 	return 0;
 }
