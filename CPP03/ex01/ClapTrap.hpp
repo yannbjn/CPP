@@ -29,7 +29,7 @@ const std::string INVERSE = "\033[7m";
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string _name;
 		int	_HitPoints;
 		int	_EnergyPoints;
@@ -38,7 +38,7 @@ class ClapTrap
 	public:
 		ClapTrap(); //canonical
 		ClapTrap(ClapTrap const &src); //canonical
-		ClapTrap(std::string name);
+		ClapTrap(std::string _name);
 		~ClapTrap();
 		ClapTrap	&operator=(ClapTrap const &rhs); //canonical
 		void	getInfo();
@@ -46,7 +46,7 @@ class ClapTrap
 		int		getHP(void);
 		int		getEP(void);
 
-		void	attack(const std::string &target);
+		void	attack(const std::string& target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 };

@@ -6,11 +6,11 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:03:30 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/23 17:46:39 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/09/23 18:04:40 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main(void)
 {
@@ -18,6 +18,8 @@ int	main(void)
 	ClapTrap ClapB("ClapB");
 	ClapTrap ClapC("ClapC");
 	ClapTrap ClapD("ClapD");
+	ScavTrap ScavA("ScavA");
+	ScavTrap ScavB("ScavB");
 
 	ClapA.setAD(10);
 	ClapA.attack("ClapC");
@@ -31,4 +33,8 @@ int	main(void)
 			ClapB.takeDamage(2);
 		ClapB.beRepaired(1);
 	}
+	ScavA.attack("ScavB");
+	if (ScavA.getHP() > 0 && ScavA.getEP() > 0)
+		ScavB.takeDamage(ScavA.getAP());
+	ScavA.guardGate();
 }

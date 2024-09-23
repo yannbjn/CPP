@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/20 15:03:30 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/23 17:46:39 by yabejani         ###   ########.fr       */
+/*   Created: 2024/09/23 16:51:43 by yabejani          #+#    #+#             */
+/*   Updated: 2024/09/23 17:45:15 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
 #include "ClapTrap.hpp"
 
-int	main(void)
+class ScavTrap : public ClapTrap
 {
-	ClapTrap ClapA("ClapA");
-	ClapTrap ClapB("ClapB");
-	ClapTrap ClapC("ClapC");
-	ClapTrap ClapD("ClapD");
+	public:
+		ScavTrap(); //canonical
+		ScavTrap(std::string name);
+		ScavTrap(ScavTrap const &src); // copy constuctor (canonical)
+		~ScavTrap();
+		ScavTrap	&operator=(ScavTrap const &rhs); // = op overload (canonical)
 
-	ClapA.setAD(10);
-	ClapA.attack("ClapC");
-	if (ClapA.getHP() > 0 && ClapA.getEP() > 0)
-		ClapC.takeDamage(10);
-	ClapC.beRepaired(10);
-	ClapD.setAD(2);
-	for (int i = 0; i < 10; i++){
-		ClapD.attack("ClapB");
-		if (ClapD.getHP() > 0 && ClapD.getEP() > 0)
-			ClapB.takeDamage(2);
-		ClapB.beRepaired(1);
-	}
-}
+		int		getAP();
+		void	attack(const std::string &target);
+		void	guardGate();
+};
