@@ -4,7 +4,7 @@ CC			=   c++
 
 FLAG		=   -std=c++98 -Wall -Wextra -Werror -pedantic
 
-C_FILES		=   main.cpp Fixed.cpp
+C_FILES		=   main.cpp ClapTrap.cpp
 
 OBJ_DIR		=   builds
 
