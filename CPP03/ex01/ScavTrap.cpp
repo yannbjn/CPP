@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 16:51:53 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/23 18:05:08 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/09/23 19:17:57 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ ScavTrap::ScavTrap(ScavTrap const &src){
 	*this = src;
 }
 
-ScavTrap::ScavTrap(std::string name){
-	this->_name = name;
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name){
+	// this->_name = name;
 	this->_HitPoints = 100;
 	this->_EnergyPoints = 50;
 	this->_AttackDamage = 20;

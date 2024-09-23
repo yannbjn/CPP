@@ -6,13 +6,16 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:08:17 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/23 19:19:36 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/09/23 19:55:54 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(){
+	// this->_HitPoints = 100;
+	// this->_EnergyPoints = 100;
+	// this->_AttackDamage = 30;
 	std::cout << "FragTrap: Default constructor called." << std::endl;
 }
 
@@ -21,19 +24,25 @@ FragTrap::FragTrap(FragTrap const &src){
 	*this = src;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name){
-	//this->_name = name;
-	this->_HitPoints = 100;
-	this->_EnergyPoints = 100;
-	this->_AttackDamage = 30;
-	std::cout << "FragTrap: Constructor of " << UNDERLINE << GREEN << this->_name << RESET << " called." << std::endl;
-	FragTrap::getInfo();
+FragTrap::FragTrap(std::string name) : ClapTrap(name) {
+    this->initializeAttributes(100, 100, 30);  // FragTrap-specific values
+    std::cout << "FragTrap: Constructor of " << BOLD << GREEN << this->_name << RESET << " called." << std::endl;
 }
+
+
+// FragTrap::FragTrap(std::string name) : ClapTrap(name){
+// 	//this->_name = name;
+// 	this->_HitPoints = 100;
+// 	this->_EnergyPoints = 100;
+// 	this->_AttackDamage = 30;
+// 	std::cout << "FragTrap: Constructor of " << BOLD << GREEN << this->_name << RESET << " called." << std::endl;
+// 	FragTrap::getInfo();
+// }
 
 ////////////DESTRUCTOR/////////////
 
 FragTrap::~FragTrap(){
-	std::cout << "FragTrap: Destructor of " << UNDERLINE << GREEN << this->_name << RESET << " called." << std::endl;
+	std::cout << "FragTrap: Destructor of " << BOLD << GREEN << this->_name << RESET << " called." << std::endl;
 }
 
 ////////////OP_OVERLOAD////////////
@@ -59,11 +68,11 @@ void	FragTrap::attack(const std::string &target){
 		std::cout << BOLD << MAGENTA << "FragTrap " << this->_name << " can't attack without Hit Points." << RESET << std::endl;
 	else if (this->_EnergyPoints > 0 && this->_HitPoints > 0){
 		this->_EnergyPoints--;
-		std::cout << BOLD << RED << "FragTrap " << UNDERLINE << GREEN << this->_name << RESET << BOLD << RED << " attacks " << target << ", causing " << this->_AttackDamage << " points of damage!" << RESET << std::endl;
+		std::cout << BOLD << RED << "FragTrap " << BOLD << GREEN << this->_name << RESET << BOLD << RED << " attacks " << target << ", causing " << this->_AttackDamage << " points of damage!" << RESET << std::endl;
 	}
 	FragTrap::getInfo();
 }
 
 void	FragTrap::highFiveGuys(void){
-	std::cout << BOLD << BLUE << "Hi I'm " << RESET << UNDERLINE << GREEN << this->_name << RESET << BOLD << BLUE << " give me a high five! :)" << RESET << std::endl;
+	std::cout << BOLD << BLUE << "Hi I'm " << RESET << BOLD << GREEN << this->_name << RESET << BOLD << BLUE << " give me a high five! :)" << RESET << std::endl;
 }
