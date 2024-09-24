@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:08:17 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/23 19:55:54 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/09/24 14:56:07 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,25 +19,19 @@ FragTrap::FragTrap(){
 	std::cout << "FragTrap: Default constructor called." << std::endl;
 }
 
-FragTrap::FragTrap(FragTrap const &src){
+FragTrap::FragTrap(FragTrap const &src) : ClapTrap(src){
 	std::cout << "FragTrap: Copy constructor called." << std::endl;
 	*this = src;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name) {
-    this->initializeAttributes(100, 100, 30);  // FragTrap-specific values
-    std::cout << "FragTrap: Constructor of " << BOLD << GREEN << this->_name << RESET << " called." << std::endl;
+FragTrap::FragTrap(std::string name) : ClapTrap(name){
+	//this->_name = name;
+	this->_HitPoints = 100;
+	this->_EnergyPoints = 100;
+	this->_AttackDamage = 30;
+	std::cout << "FragTrap: Constructor of " << BOLD << GREEN << this->_name << RESET << " called." << std::endl;
+	FragTrap::getInfo();
 }
-
-
-// FragTrap::FragTrap(std::string name) : ClapTrap(name){
-// 	//this->_name = name;
-// 	this->_HitPoints = 100;
-// 	this->_EnergyPoints = 100;
-// 	this->_AttackDamage = 30;
-// 	std::cout << "FragTrap: Constructor of " << BOLD << GREEN << this->_name << RESET << " called." << std::endl;
-// 	FragTrap::getInfo();
-// }
 
 ////////////DESTRUCTOR/////////////
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:03:06 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/23 19:54:05 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/09/24 14:29:46 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ class ClapTrap
 		int	_HitPoints;
 		int	_EnergyPoints;
 		int	_AttackDamage;
-
-		virtual void initializeAttributes(int hitPoints, int energyPoints, int attackDamage);
 
 	public:
 		ClapTrap(); //canonical

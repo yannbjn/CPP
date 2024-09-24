@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:08:17 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/23 19:19:36 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/09/24 14:55:34 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ FragTrap::FragTrap(){
 	std::cout << "FragTrap: Default constructor called." << std::endl;
 }
 
-FragTrap::FragTrap(FragTrap const &src){
+FragTrap::FragTrap(FragTrap const &src) : ClapTrap(src){
 	std::cout << "FragTrap: Copy constructor called." << std::endl;
 	*this = src;
 }

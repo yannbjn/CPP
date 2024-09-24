@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 16:51:53 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/23 19:18:48 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/09/24 14:55:26 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ ScavTrap::ScavTrap(){
 	std::cout << "ScavTrap: Default constructor called." << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &src){
+ScavTrap::ScavTrap(ScavTrap const &src) : ClapTrap(src){
 	std::cout << "ScavTrap: Copy constructor called." << std::endl;
 	*this = src;
 }

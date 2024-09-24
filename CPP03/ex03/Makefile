@@ -2,7 +2,7 @@ NAME		=   a.out
 
 CC			=   c++
 
-FLAG		=   -std=c++98 -Wall -Wextra -Werror -pedantic
+FLAG		=   -std=c++98 -Wall -Wextra -Werror -Wshadow -Wno-shadow -pedantic
 
 C_FILES		=   main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:03:36 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/23 19:54:22 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/09/24 14:29:52 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,10 +98,4 @@ void	ClapTrap::beRepaired(unsigned int amount){
 		std::cout << BOLD << GREEN << this->_name << RESET << BOLD << BLUE << " got repaired for " << amount << " Hit Points." << RESET << std::endl;
 	}
 	ClapTrap::getInfo();
-}
-
-void ClapTrap::initializeAttributes(int hitPoints, int energyPoints, int attackDamage) {
-    this->_HitPoints = hitPoints;
-    this->_EnergyPoints = energyPoints;
-    this->_AttackDamage = attackDamage;
 }
