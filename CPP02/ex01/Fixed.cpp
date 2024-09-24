@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 14:34:06 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/18 15:30:26 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/09/24 18:50:44 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Fixed::Fixed(int const inttoFixed)
 Fixed::Fixed(float const floattoFixed)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->_valueFixed = floattoFixed * (1 << _nbBits);
+	this->_valueFixed = roundf(floattoFixed * (1 << _nbBits));
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
