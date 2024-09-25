@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 16:48:47 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/13 20:14:23 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/09/25 15:07:21 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class PhoneBook
 		void displaycontact(int index) const;
 	private:
 		Contact contacts[8];
-		int contactindex;
-		int contactcount;
+		int _contactindex;
+		int _contactcount;
 };
 
 #endif

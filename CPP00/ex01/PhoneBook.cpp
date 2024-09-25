@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 16:54:08 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/19 14:02:13 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/09/25 15:08:16 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <iomanip>
 #include <limits>
 
-PhoneBook::PhoneBook() : contactindex(0), contactcount(0){}
+PhoneBook::PhoneBook() : _contactindex(0), _contactcount(0){}
 
 PhoneBook::~PhoneBook(){
     std::cout << BOLD << GREEN << "PhoneBook closed, bye bye." << RESET << std::endl;
@@ -81,15 +81,15 @@ void	PhoneBook::addcontact()
     }
     newContact.setdarkestsecret(input);
 
-    this->contacts[this->contactindex] = newContact;
-    this->contactindex = (this->contactindex + 1) % 8;
-    if (this->contactcount < 8)
-        this->contactcount++;
+    this->contacts[this->_contactindex] = newContact;
+    this->_contactindex = (this->_contactindex + 1) % 8;
+    if (this->_contactcount < 8)
+        this->_contactcount++;
 }
 
 void	PhoneBook::searchcontacts() const
 {
-	if (this->contactcount == 0)
+	if (this->_contactcount == 0)
 	{
         std::cout << BOLD << RED << "PhoneBook is empty." << RESET << std::endl;
         return;
@@ -101,7 +101,7 @@ void	PhoneBook::searchcontacts() const
               << "|" << std::setw(10) << "Nickname" << "|" << std::endl;
     std::cout << "+----------+----------+----------+----------+" << RESET << std::endl;
 
-    for (int i = 0; i < this->contactcount; i++)
+    for (int i = 0; i < this->_contactcount; i++)
 	{
         std::cout << BOLD << BLUE << "|" << BOLD << GREEN << std::setw(10) << i << BOLD << BLUE << "|" << RESET;
         std::cout << YELLOW << std::setw(10) << (this->contacts[i].getfirstname().length() > 10 ? this->contacts[i].getfirstname().substr(0, 9) + "." : this->contacts[i].getfirstname()) << BOLD << BLUE << "|" << RESET;
@@ -124,7 +124,7 @@ void	PhoneBook::searchcontacts() const
             std::cout << BOLD << RED << "Invalid index." << std::endl << RESET;
             continue ;
         }
-        if (index < 0 || index >= this->contactcount)
+        if (index < 0 || index >= this->_contactcount)
 	    {
             std::cout << BOLD << RED << "Invalid index." << std::endl << RESET;
         }

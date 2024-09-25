@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 16:48:41 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/13 20:14:02 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/09/25 15:07:09 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 class Contact
 {
   private:
-	std::string firstname;
-	std::string lastname;
-	std::string nickname;
-	std::string phonenumber;
-	std::string darkestsecret;
+	std::string _firstname;
+	std::string _lastname;
+	std::string _nickname;
+	std::string _phonenumber;
+	std::string _darkestsecret;
 
   public:
 	void setfirstname(std::string &firstname);
