@@ -6,7 +6,7 @@
 /*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 14:26:52 by frite             #+#    #+#             */
-/*   Updated: 2024/10/01 16:39:16 by frite            ###   ########.fr       */
+/*   Updated: 2024/10/01 15:29:12 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Animal
 	public:
 		Animal(); //canonical
 		Animal(Animal const &src); // canonical
-		virtual ~Animal(); // C++ impose que toute classe possédant au moins une méthode virtuelle doit également avoir un destructeur virtuel.
+		virtual ~Animal();
 
 		Animal	&operator=(Animal const &rhs); // canonical
 

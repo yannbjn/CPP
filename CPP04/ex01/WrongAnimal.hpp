@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 14:26:52 by frite             #+#    #+#             */
-/*   Updated: 2024/10/01 16:39:16 by frite            ###   ########.fr       */
+/*   Created: 2024/10/01 15:06:24 by frite             #+#    #+#             */
+/*   Updated: 2024/10/01 15:29:43 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,18 @@
 #include <string>
 #include <iostream>
 
-
-
-class Animal
+class WrongAnimal
 {
     protected:
-		std::string _type;
+        std::string _type;
+    
+    public:
+        WrongAnimal(); // canonical
+        WrongAnimal(WrongAnimal const &src); // canonical
+        virtual ~WrongAnimal();
 
-	public:
-		Animal(); //canonical
-		Animal(Animal const &src); // canonical
-		virtual ~Animal(); // C++ impose que toute classe possédant au moins une méthode virtuelle doit également avoir un destructeur virtuel.
+        WrongAnimal &operator=(WrongAnimal const &rhs); // canonical
 
-		Animal	&operator=(Animal const &rhs); // canonical
-
-		std::string		getType() const;
-		virtual void	makeSound() const; // mot cle virtual permet de dire que cette methode peut etre redefinie dans une classe derivee
-	
+        std::string     getType() const;
+        virtual void    makeSound() const; // mot cle virtual permet de dire que cette methode peut etre redefinie dans une classe derivee
 };

@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 15:39:17 by frite             #+#    #+#             */
-/*   Updated: 2024/10/01 16:19:15 by frite            ###   ########.fr       */
+/*   Created: 2024/09/26 14:47:23 by frite             #+#    #+#             */
+/*   Updated: 2024/10/01 17:36:05 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "WrongAnimal.hpp"
+#include "Animal.hpp"
 
-class WrongCat: public WrongAnimal
+class Cat: public Animal
 {
-    public:
-        WrongCat(); //canonical
-        WrongCat(WrongCat const &src); //canonical
-        ~WrongCat();
+	private:
+		Brain *_Brain;
+	public:
+		Cat();
+		Cat(Cat const &src);
+		~Cat();
 
-        WrongCat &operator=(WrongCat const &rhs); //canonical
+		Cat	&operator=(Cat const &rhs);
 
-        void    makeSound() const;
+		void	makeSound() const;
 };
+

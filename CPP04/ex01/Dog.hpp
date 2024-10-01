@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 15:39:17 by frite             #+#    #+#             */
-/*   Updated: 2024/10/01 16:19:15 by frite            ###   ########.fr       */
+/*   Created: 2024/09/26 14:43:35 by frite             #+#    #+#             */
+/*   Updated: 2024/09/26 17:09:44 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "WrongAnimal.hpp"
+#include "Animal.hpp"
 
-class WrongCat: public WrongAnimal
+class Dog: public Animal
 {
-    public:
-        WrongCat(); //canonical
-        WrongCat(WrongCat const &src); //canonical
-        ~WrongCat();
+	public:
+		Dog();
+		Dog(Dog const &src);
+		~Dog();
 
-        WrongCat &operator=(WrongCat const &rhs); //canonical
+		Dog	&operator=(Dog const &rhs);
 
-        void    makeSound() const;
+		void	makeSound() const;
 };
