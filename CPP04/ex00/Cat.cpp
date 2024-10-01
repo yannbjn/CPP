@@ -6,7 +6,7 @@
 /*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 16:51:19 by frite             #+#    #+#             */
-/*   Updated: 2024/09/26 17:09:58 by frite            ###   ########.fr       */
+/*   Updated: 2024/10/01 15:46:13 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Cat::~Cat(){
 }
 
 Cat &Cat::operator=(Cat const &rhs){
-	std::cout << "Animal Assignation operator called" << std::endl;
+	std::cout << "Cat Assignation operator called" << std::endl;
 	if (this == &rhs)
 		return *this;
 
