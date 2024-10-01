@@ -6,7 +6,7 @@
 /*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 14:26:52 by frite             #+#    #+#             */
-/*   Updated: 2024/10/01 15:29:12 by frite            ###   ########.fr       */
+/*   Updated: 2024/10/01 17:48:58 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 #include <string>
 #include <iostream>
-
-
+#include "Brain.hpp"
 
 class Animal
 {
