@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 16:51:16 by frite             #+#    #+#             */
-/*   Updated: 2024/10/01 16:04:19 by frite            ###   ########.fr       */
+/*   Updated: 2024/10/07 16:45:06 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 Dog::Dog() : Animal(){
     _type = "Dog";
+    _Brain = new Brain();
     std::cout << "Dog: Default constructor called." << std::endl;
 }
 
@@ -24,6 +25,7 @@ Dog::Dog(Dog const &src) : Animal(){
 }
 
 Dog::~Dog(){
+    delete _Brain;
     std::cout << "Dog: Destructor called." << std::endl;
 }
 
@@ -33,6 +35,7 @@ Dog &Dog::operator=(Dog const &rhs){
 		return *this;
 
 	this->_type = rhs._type;
+    this->_Brain = rhs._Brain;
 	return *this;
 }
 

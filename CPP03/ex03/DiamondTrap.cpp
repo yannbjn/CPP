@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:28:16 by yabejani          #+#    #+#             */
-/*   Updated: 2024/09/24 14:57:13 by frite            ###   ########.fr       */
+/*   Updated: 2024/09/26 20:03:29 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(name), Fra
 	this->_name = name;
 	this->ClapTrap::_name = name + "_clap_name";
 	this->_HitPoints = FragTrap::_HitPoints;
-	this->_EnergyPoints = 50; //tmp solution pcq jpp
-	//this->_EnergyPoints = ScavTrap::_EnergyPoints;
+	//this->_EnergyPoints = 50; //tmp solution pcq jpp
+	this->_EnergyPoints = ScavTrap::_EnergyPoints;
 	//std::cout << "baSBAHbj = " << ScavTrap::_EnergyPoints << std::endl;
 	this->_AttackDamage = FragTrap::_AttackDamage;
 	std::cout << "DiamondTrap: Constructor of " << BOLD << GREEN << this->_name << RESET << " called." << std::endl;
