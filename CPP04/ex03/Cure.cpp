@@ -1,8 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/08 14:49:12 by frite             #+#    #+#             */
+/*   Updated: 2024/10/08 15:35:42 by frite            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Cure.hpp"
 
 Cure::Cure() : AMateria("cure") {}
 
 Cure::Cure(Cure const &other) : AMateria(other) {}
+
+Cure::~Cure() {}
 
 Cure &Cure::operator=(Cure const &other) {
     if (this != &other) {
@@ -10,8 +24,6 @@ Cure &Cure::operator=(Cure const &other) {
     }
     return *this;
 }
-
-Cure::~Cure() {}
 
 AMateria *Cure::clone() const {
     return new Cure(*this);

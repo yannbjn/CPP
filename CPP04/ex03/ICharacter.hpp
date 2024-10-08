@@ -3,12 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 18:09:48 by yabejani          #+#    #+#             */
-/*   Updated: 2024/10/07 18:29:29 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/10/08 15:27:18 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// Pourquoi une interface ? : Une interface permet de définir un comportement
+// sans en fournir l'implémentation. Cela garantit que toutes les classes qui 
+// implémentent ICharacter auront les méthodes equip(), unequip(), et use().
 
 #pragma once
 
@@ -17,7 +21,8 @@
 
 class AMateria;
 
-class ICharacter {
+class ICharacter
+{
 public:
     virtual ~ICharacter() {}
     virtual std::string const &getName() const = 0;

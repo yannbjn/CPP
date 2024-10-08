@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 18:27:24 by yabejani          #+#    #+#             */
-/*   Updated: 2024/10/07 18:27:50 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/10/08 14:53:47 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 #include "AMateria.hpp"
 
-class Ice : public AMateria {
+class Ice : public AMateria
+{
 public:
     Ice();
     Ice(Ice const &other);

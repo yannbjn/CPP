@@ -1,9 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/08 15:50:18 by frite             #+#    #+#             */
+/*   Updated: 2024/10/08 15:50:19 by frite            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #pragma once
 
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
 
-class Character : public ICharacter {
+class Character : public ICharacter
+{
 private:
     std::string _name;
     AMateria *_inventory[4];
