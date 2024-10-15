@@ -1,11 +1,10 @@
-NAME		=   interface
+NAME		=   bureaucrat
 
 CC			=   c++
 
 FLAG		=   -std=c++98 -Wall -Wextra -Werror -pedantic -g3
 
-C_FILES		=   main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp
-
+C_FILES		=   main.cpp Bureaucrat.cpp
 OBJ_DIR		=   builds
 
 OBJS		=   $(addprefix $(OBJ_DIR)/, $(C_FILES:.cpp=.o))
