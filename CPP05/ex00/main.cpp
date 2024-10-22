@@ -6,7 +6,7 @@
 /*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 17:38:02 by frite             #+#    #+#             */
-/*   Updated: 2024/10/15 18:10:20 by frite            ###   ########.fr       */
+/*   Updated: 2024/10/22 16:42:56 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main(){
     }
     catch (std::exception &e)
     {
-        std::cerr << e.what() << std::endl;
+        std::cout << "Bureaucrat John: " << e.what() << std::endl;
     }
 
     try
@@ -43,7 +43,7 @@ int main(){
     }
     catch (std::exception &e)
     {
-        std::cerr << e.what() << std::endl;
+        std::cout << "Bureaucrat Jack: " << e.what() << std::endl;
     }
 
     try
@@ -52,7 +52,7 @@ int main(){
     }
     catch (std::exception &e)
     {
-        std::cerr << e.what() << std::endl;
+        std::cout << "Bureaucrat Invalid: " << e.what() << std::endl;
     }
 
     return 0;
