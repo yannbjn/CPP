@@ -6,7 +6,7 @@
 /*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 14:49:19 by frite             #+#    #+#             */
-/*   Updated: 2024/10/08 14:49:27 by frite            ###   ########.fr       */
+/*   Updated: 2024/10/24 14:23:05 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 class Cure : public AMateria
 {
-public:
-    Cure();
-    Cure(Cure const &other);
-    Cure &operator=(Cure const &other);
-    ~Cure();
+    public:
+        Cure();
+        Cure(Cure const &other);
+        Cure &operator=(Cure const &other);
+        ~Cure();
 
-    AMateria *clone() const;
-    void use(ICharacter &target);
+        AMateria *clone() const;
+        void use(ICharacter &target);
 };

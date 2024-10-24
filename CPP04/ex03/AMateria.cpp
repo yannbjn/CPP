@@ -6,7 +6,7 @@
 /*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 18:11:46 by yabejani          #+#    #+#             */
-/*   Updated: 2024/10/08 14:55:53 by frite            ###   ########.fr       */
+/*   Updated: 2024/10/24 14:22:11 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ AMateria &AMateria::operator=(AMateria const &rhs){
 	return *this;
 }
 
-std::string const &AMateria::getType() const {
+std::string const &AMateria::getType() const{
 	return this->_type;
 }
 
-void AMateria::use(ICharacter &target) {
+void AMateria::use(ICharacter &target){
     std::cout << "* uses a Materia on " << target.getName() << " *" << std::endl;
 }
