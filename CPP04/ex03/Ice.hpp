@@ -6,7 +6,7 @@
 /*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 18:27:24 by yabejani          #+#    #+#             */
-/*   Updated: 2024/10/24 14:23:14 by frite            ###   ########.fr       */
+/*   Updated: 2024/10/08 14:53:47 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 class Ice : public AMateria
 {
-    public:
-        Ice();
-        Ice(Ice const &other);
-        Ice &operator=(Ice const &other);
-        ~Ice();
+public:
+    Ice();
+    Ice(Ice const &other);
+    Ice &operator=(Ice const &other);
+    ~Ice();
 
-        AMateria *clone() const;
-        void use(ICharacter &target);
+    AMateria *clone() const;
+    void use(ICharacter &target);
 };

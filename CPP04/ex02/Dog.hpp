@@ -3,27 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 14:43:35 by frite             #+#    #+#             */
-/*   Updated: 2024/10/01 17:49:08 by frite            ###   ########.fr       */
+/*   Updated: 2024/11/05 15:54:35 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
-class Dog: public Animal
-{
-	private:
-		Brain *_Brain;
-	public:
-		Dog();
-		Dog(Dog const &src);
-		~Dog();
+class Dog : public Animal{
+    private:
+        Brain* _brain;
 
-		Dog	&operator=(Dog const &rhs);
-
-		void	makeSound() const;
+    public:
+        Dog();
+        Dog(const Dog& other);
+        Dog& operator=(const Dog& other);
+        virtual ~Dog();
+        void makeSound() const;
+        void setIdea(int index,const std::string  &idea);
+        std::string  getIdea(int index)const ;
 };

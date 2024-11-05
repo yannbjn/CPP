@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 16:51:16 by frite             #+#    #+#             */
-/*   Updated: 2024/10/01 16:04:19 by frite            ###   ########.fr       */
+/*   Updated: 2024/11/05 15:25:37 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Dog::~Dog(){
 }
 
 Dog &Dog::operator=(Dog const &rhs){
-	std::cout << "Animal Assignation operator called" << std::endl;
+	std::cout << "Dog Assignation operator called" << std::endl;
 	if (this == &rhs)
 		return *this;
 

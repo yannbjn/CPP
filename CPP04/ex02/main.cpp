@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 14:53:12 by frite             #+#    #+#             */
-/*   Updated: 2024/10/07 17:15:25 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/11/05 17:44:18 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,90 +15,65 @@
 #include "Cat.hpp"
 #include "WrongCat.hpp"
 
-// Si tu veux empêcher l'instanciation directe de la classe de base Animal
-// tout en maintenant la hiérarchie d'héritage, tu peux utiliser une classe abstraite.
-// En C++, une classe devient abstraite dès qu'elle contient au moins
-// une fonction virtuelle pure (une méthode virtuelle sans implémentation, marquée par = 0).
-// L'idée ici est de rendre Animal abstrait afin qu'elle ne puisse jamais être instanciée directement.
-// Seules les classes dérivées concrètes (Cat et Dog) pourront être instanciées.
-// Même si le constructeur de la classe Animal sera toujours appelé dans le processus d'instanciation de Cat ou Dog,
-// il n'y aura jamais de création d'objets directement de type Animal.
-
-
-//CONSTRUCTOR AND DESTRUCTOR OF ANIMAL CLASS WILL STILL BE CALLED, BUT IT'S NOW IMPOSSIBLE TO CREATE AN INSTANCE OF THIS CLASS WITHOUT USING CAT OR DOG
-
-
-
-// int main()
-// {
-//     const WrongAnimal *WrongMeta = new WrongAnimal();
-//     const WrongAnimal *wcat = new WrongCat();
-//     const Animal *meta = new Animal();
-//     const Animal* j = new Dog();
-//     const Animal* i = new Cat();
-//     std::cout << j->getType() << " " << std::endl;
-//     std::cout << i->getType() << " " << std::endl;
-//     i->makeSound();
-//     j->makeSound();
-//     meta->makeSound();
-//     wcat->makeSound();
-//     WrongMeta->makeSound();
-
-//     delete meta;
-//     delete j;
-//     delete i;
-//     delete WrongMeta;
-// 	delete wcat;
-
-// 	std::cout << std::endl << "///////////////////////////////////////////" << std::endl << std::endl;
-
-// 	Cat testcat;
-// 	WrongCat testwcat;
-// 	WrongAnimal testwanimal;
-	
-// 	testcat.makeSound();
-// 	testwcat.makeSound();
-// 	testwanimal.makeSound();
-    
-//     return 0;
-// }
-
 int main(void)
 {
-    const Animal* j = new Dog();
-    // const Animal* i = new Cat();
+	//uncommenting line below should block compilation
+	//Animal test;
+    Animal* tab[20];
 
-    delete j;
-    // delete i;
+    int x = 0;
+    for (; x < 10; x++)
+        tab[x] = new Dog();
+    for (; x < 20; x++)
+        tab[x] = new Cat();
     
-    // std::cout << std::endl << "///////////////////////////////////////////" << std::endl << std::endl;
-
-    // Cat testCat;
-    // std::cout << std::endl << "///////////////////////////////////////////" << std::endl << std::endl;
-    // Dog testDog;
-    // std::cout << std::endl << "//////uncommenting whats under this should block compilation////////" << std::endl << std::endl;
-    // Animal testAnimal;
-    // std::cout << std::endl << "///////////////////////////////////////////" << std::endl << std::endl;
-    // WrongAnimal testWrongAnimal;
-    // std::cout << std::endl << "///////////////////////////////////////////" << std::endl << std::endl;
-    // WrongCat testWrongCat;
-    // std::cout << std::endl << "///////////////////////////////////////////" << std::endl << std::endl;
-
-    // Animal* tab[20];
-
-    // int x = 0;
-    // for (; x < 10; x++)
-    //     tab[x] = new Dog();
-    // for (; x < 20; x++)
-    //     tab[x] = new Cat();
+    x = 0;
+    for (; x < 10; x++)
+        tab[x]->makeSound();
+    for (; x < 20; x++)
+        tab[x]->makeSound();
     
-    // x = 0;
-    // for (; x < 10; x++)
-    //     tab[x]->makeSound();
-    // for (; x < 20; x++)
-    //     tab[x]->makeSound();
-    
-    // x = 0;
-    // for (; x < 20; x++)
-    //     delete tab[x];
+    x = 0;
+    for (; x < 20; x++)
+        delete tab[x];
+	
+	// Check if deep copy
+	
+	// Dog OGdog;
+	// Cat OGcat;
+	
+	// OGdog.setIdea(0, "This is a nice tree to pee on.");
+	// OGdog.setIdea(1, "Wow another great tree to pee on!");
+
+	// OGcat.setIdea(0, "This dog looks dumb.");
+	// OGcat.setIdea(1, "I'm gonna scratch his face.");
+
+	// Dog COPYdog = OGdog;
+	// Cat COPYcat = OGcat;
+
+	// std::cout << "OGdog idea: " << OGdog.getIdea(0) << std::endl;
+	// std::cout << "OGdog idea: " << OGdog.getIdea(1) << std::endl;
+	// std::cout << "COPYdog idea: " << COPYdog.getIdea(0) << std::endl;
+	// std::cout << "COPYdog idea: " << COPYdog.getIdea(1) << std::endl;
+
+	// std::cout << "OGcat idea: " << OGcat.getIdea(0) << std::endl;
+	// std::cout << "OGcat idea: " << OGcat.getIdea(1) << std::endl;
+	// std::cout << "COPYcat idea: " << COPYcat.getIdea(0) << std::endl;
+	// std::cout << "COPYcat idea: " << COPYcat.getIdea(1) << std::endl;
+
+
+	// COPYdog.setIdea(0, "woof woof woof");
+	// COPYdog.setIdea(1, "ball ball ball");
+	// COPYcat.setIdea(0, "This dog looks nice.");
+	// COPYcat.setIdea(1, "I really love this dog");
+
+	// std::cout << "OGdog idea: " << OGdog.getIdea(0) << std::endl;
+	// std::cout << "OGdog idea: " << OGdog.getIdea(1) << std::endl;
+	// std::cout << "COPYdog idea: " << COPYdog.getIdea(0) << std::endl;
+	// std::cout << "COPYdog idea: " << COPYdog.getIdea(1) << std::endl;
+
+	// std::cout << "OGcat idea: " << OGcat.getIdea(0) << std::endl;
+	// std::cout << "OGcat idea: " << OGcat.getIdea(1) << std::endl;
+	// std::cout << "COPYcat idea: " << COPYcat.getIdea(0) << std::endl;
+	// std::cout << "COPYcat idea: " << COPYcat.getIdea(1) << std::endl;
 }

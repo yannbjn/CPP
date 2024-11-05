@@ -6,25 +6,23 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 16:19:51 by frite             #+#    #+#             */
-/*   Updated: 2024/10/07 16:32:24 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/11/05 15:55:03 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
 #include <string>
-#include <iomanip>
+#include <iostream>
 
-class Brain
-{
-    protected:
-        std::string _ideas[100];
-
+class Brain{
     public:
-        Brain(); //canonical
-        Brain(Brain const &src); //canonical
-        virtual ~Brain();
+        std::string _idea[100];
 
-        Brain &operator=(const Brain &rhs);
+        Brain();
+        Brain(const Brain& other);
+        Brain& operator=(const Brain& other);
+        ~Brain();
+        void setIdea(int index, const std::string  &idea);
+        std::string getIdea(int index);
 };

@@ -3,28 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 14:47:23 by frite             #+#    #+#             */
-/*   Updated: 2024/10/01 17:49:04 by frite            ###   ########.fr       */
+/*   Updated: 2024/11/05 15:54:45 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
-class Cat: public Animal
-{
-	private:
-		Brain *_Brain;
-	public:
-		Cat();
-		Cat(Cat const &src);
-		~Cat();
+class Cat : public Animal{
+    private:
+        Brain* _brain;
 
-		Cat	&operator=(Cat const &rhs);
-
-		void	makeSound() const;
+    public:
+        Cat();
+        Cat(const Cat& other);
+        Cat& operator=(const Cat& other);
+        virtual ~Cat();
+        void makeSound() const;
+        void setIdea(int index,const std::string  &idea);
+        std::string  getIdea(int index)const;
 };
-
