@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:21:46 by frite             #+#    #+#             */
-/*   Updated: 2024/10/22 16:39:29 by frite            ###   ########.fr       */
+/*   Updated: 2024/12/02 17:58:51 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,14 @@ int Bureaucrat::getGrade(){
 }
 
 void Bureaucrat::incrGrade(){
-    this->_grade++;
-    if (this->_grade > 150)
+    this->_grade--;
+    if (this->_grade < 1)
         throw Bureaucrat::GradeTooHighException();
 }
 
 void Bureaucrat::decrGrade(){
-    this->_grade--;
-    if (this->_grade < 1)
+    this->_grade++;
+    if (this->_grade > 150)
         throw Bureaucrat::GradeTooLowException();
 }
 
