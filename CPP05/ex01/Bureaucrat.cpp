@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:21:46 by frite             #+#    #+#             */
-/*   Updated: 2024/12/02 17:58:51 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/12/03 12:59:32 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 
 Bureaucrat::Bureaucrat(Bureaucrat const &src){
     *this = src;
-    std::cout << "Bureaucrat: Copy constructor called." << std::endl;
+    //std::cout << "Bureaucrat: Copy constructor called." << std::endl;
 }
 
 Bureaucrat::~Bureaucrat(){
-    std::cout << "Bureaucrat " << this->_name << ": Destructor called." << std::endl;
+    //std::cout << "Bureaucrat " << this->_name << ": Destructor called." << std::endl;
 }
 
 std::string Bureaucrat::getName(){
@@ -65,7 +65,7 @@ void Bureaucrat::decrGrade(){
 }
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs){
-    std::cout << "Bureaucrat Assignation operator overload called" << std::endl;
+    //std::cout << "Bureaucrat Assignation operator overload called" << std::endl;
     if (this == &rhs)
         return *this;
     this->_grade = rhs._grade;
@@ -83,4 +83,13 @@ const char *Bureaucrat::GradeTooLowException::what() const throw(){
 std::ostream &operator<<(std::ostream &o, Bureaucrat &bureaucrat){
     o << "Bureaucrat named \"" << bureaucrat.getName() << "\" current grade is " << bureaucrat.getGrade() << "." << std::endl;
     return (o);
+}
+
+void    Bureaucrat::SignForm(Form &form){
+    if (form.CanSignForm(*this) == true){
+        std::cout << this->getName() << " signed " << form.getName() << std::endl;
+    }
+    else{
+        std::cout << this->getName() << " couldn't sign " << form.getName() << " because his grade is " << this->getGrade() << " while we need a Bureaucrat of rank " << form.getReqGrade() << std::endl;
+    }
 }

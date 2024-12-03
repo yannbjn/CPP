@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 16:44:23 by frite             #+#    #+#             */
-/*   Updated: 2024/12/02 19:20:45 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/12/03 13:02:17 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 #include <string>
 #include <iostream>
+#include <exception>
 #include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
@@ -47,12 +50,11 @@ class Form
 
         /// GETTERS ///
         const std::string   getName(void) const;
-        bool                getIsGradeSigned(void) const;
+        bool                getIsFormSigned(void) const;
         int                 getReqGrade(void) const;
         int                 getexecGrade(void) const;
         
-        /// MEMBER FT ///
-        bool				SignGrade(Bureaucrat bureaucrat);
+        bool				CanSignForm(Bureaucrat bureaucrat);
 };
 
 std::ostream    &operator<<(std::ostream &o, Form &Form);

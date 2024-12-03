@@ -6,27 +6,26 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 19:10:53 by yabejani          #+#    #+#             */
-/*   Updated: 2024/12/02 19:16:05 by yabejani         ###   ########.fr       */
+/*   Updated: 2024/12/03 13:03:34 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form() : _name("Empty"), _isSigned(false), _ReqGrade(0), _execGrade(0) 
-{
 
+
+Form::Form() : _name("Empty"), _isSigned(false), _ReqGrade(0), _execGrade(0){
 }
 
-Form::~Form() 
-{
-
+Form::~Form(){
 }
 
 Form::Form(std::string name, int signGrade, int execGrade) : _name(name), _isSigned(false), _ReqGrade(signGrade), _execGrade(execGrade)
 {	
-	if (signGrade < 1 || execGrade < 1) {
+	if (signGrade < 1 || execGrade < 1){
 		throw (Form::GradeTooHighException());
-	} else if (signGrade > 150 || execGrade > 150) {
+	}
+	else if (signGrade > 150 || execGrade > 150){
 		throw (Form::GradeTooLowException());
 	}
 }
@@ -50,7 +49,7 @@ std::string const	Form::getName() const
 	return _name;
 }
 
-bool	Form::getIsGradeSigned() const 
+bool	Form::getIsFormSigned() const 
 {
 	if (_isSigned == true)
 		return true;
@@ -67,7 +66,7 @@ int	Form::getexecGrade() const
 	return _execGrade;
 }
 
-bool	Form::SignGrade(Bureaucrat bureaucrat) 
+bool	Form::CanSignForm(Bureaucrat bureaucrat) 
 {
 	if (bureaucrat.getGrade() <= this->_ReqGrade) 
 	{
@@ -80,10 +79,23 @@ bool	Form::SignGrade(Bureaucrat bureaucrat)
 	}
 }
 
-std::ostream	&operator<<(std::ostream &out, Form const &form) {
-	out << "Form : " << form.getName() << std::endl;
-	out << "Signed : " << form.getIsGradeSigned() << std::endl;
-	out << "Required Grade : " << form.getReqGrade() << std::endl;
-	out << "Executable Grade : " << form.getexecGrade() << std::endl;
-	return (out);
+const char *Form::GradeTooLowException::what(void) const throw(){
+	return ("Grade is too low");
+}
+
+const char *Form::GradeTooHighException::what(void) const throw(){
+	return ("Grade is too high");
+}
+
+std::ostream	&operator<<(std::ostream &o, Form &Form)
+{
+	o << "Form: " << Form.getName() << std::endl;
+	//o << "Signed: " << Form.getIsFormSigned() << std::endl;
+	if (Form.getIsFormSigned())
+		o << "Is Form Signed: True" << std::endl;
+	else
+		o << "Is Dorm Signed: False" << std::endl;
+	o << "Required Grade to sign Form: " << Form.getReqGrade() << std::endl;
+	o << "Required Grade to execute Form: " << Form.getexecGrade() << std::endl;
+	return (o);
 }

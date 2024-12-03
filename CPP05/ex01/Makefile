@@ -1,10 +1,10 @@
-NAME		=   bureaucrat
+NAME		=   forms
 
 CC			=   c++
 
-FLAG		=   -std=c++98 -Wall -Wextra -Werror -pedantic -g3
+FLAG		=   -std=c++98 -Wall -Wextra -Werror -g3
 
-C_FILES		=   main.cpp Bureaucrat.cpp
+C_FILES		=   main.cpp Bureaucrat.cpp Form.cpp
 OBJ_DIR		=   builds
 
 OBJS		=   $(addprefix $(OBJ_DIR)/, $(C_FILES:.cpp=.o))
