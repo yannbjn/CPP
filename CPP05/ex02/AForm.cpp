@@ -6,7 +6,7 @@
 /*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 12:12:25 by frite             #+#    #+#             */
-/*   Updated: 2025/01/13 12:13:03 by frite            ###   ########.fr       */
+/*   Updated: 2025/01/13 16:55:11 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,7 @@ AForm::AForm(AForm const &src) : _name(src.getName()), _isSigned(false), _ReqGra
 AForm	&AForm::operator=(AForm const &rhs) 
 {
 	if (this != &rhs) {
-		AForm tmp(rhs);
-		*this = tmp;
+		_isSigned = rhs.getIsAFormSigned();
 	}
 	return *this;
 }
