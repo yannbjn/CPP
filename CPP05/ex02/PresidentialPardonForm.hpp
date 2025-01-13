@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/13 12:00:57 by frite             #+#    #+#             */
-/*   Updated: 2025/01/13 13:07:26 by frite            ###   ########.fr       */
+/*   Created: 2025/01/13 13:11:55 by frite             #+#    #+#             */
+/*   Updated: 2025/01/13 13:14:07 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 #include "AForm.hpp"
 
-class ShrubberyCreationForm : public AForm
+class PresidentialPardonForm : public AForm
 {
     private:
         std::string _target;
     
     public:
-        ShrubberyCreationForm(); //canonical
-        ShrubberyCreationForm(std::string name);
-        ShrubberyCreationForm(ShrubberyCreationForm const &src); //canonical
-        
-        ~ShrubberyCreationForm();
-        
-        ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs); //canonical
+        PresidentialPardonForm(); //canonical
+        PresidentialPardonForm(std::string name);
+        PresidentialPardonForm(PresidentialPardonForm const &src); //canonical
+
+        ~PresidentialPardonForm();
+
+        PresidentialPardonForm &operator=(PresidentialPardonForm const &rhs); //canonical
         void    execute(Bureaucrat const &executor) const;
 };
