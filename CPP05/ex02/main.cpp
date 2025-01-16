@@ -6,7 +6,7 @@
 /*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:49:33 by frite             #+#    #+#             */
-/*   Updated: 2025/01/16 17:18:17 by frite            ###   ########.fr       */
+/*   Updated: 2025/01/16 17:25:23 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,14 @@ bool	check_name(const std::string &name)
 	return (true);
 }
 
-// int main(void){
-//     try{
-//         Bureaucrat employee("Pres", 1);
-//         std::cout << BLUE << "Presidential Form tests:" << RESET << std::endl;
-//         PresidentialPardonForm PresidentialForm("Need pardon");
-//         try{
-//             employee.SignForm(PresidentialForm);
-//         }
-//     }
-// }
+int main(void){
+    std::cout << BLUE << "Presidential Form tests:" << RESET << std::endl;
+    Bureaucrat employee("Pres", 1);
+    PresidentialPardonForm PresidentialForm("Need pardon");
+    try{
+        employee.SignForm(PresidentialForm);
+    }
+}
 
 // int	main(void)
 // {
