@@ -4,7 +4,7 @@ CC			=   c++
 
 FLAG		=   -std=c++98 -Wall -Wextra -Werror -g3
 
-C_FILES		=   main.cpp Bureaucrat.cpp Form.cpp
+C_FILES		=   main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 OBJ_DIR		=   builds
 
 OBJS		=   $(addprefix $(OBJ_DIR)/, $(C_FILES:.cpp=.o))

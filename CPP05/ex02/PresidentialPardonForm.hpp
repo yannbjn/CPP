@@ -6,7 +6,7 @@
 /*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 13:11:55 by frite             #+#    #+#             */
-/*   Updated: 2025/01/13 13:14:07 by frite            ###   ########.fr       */
+/*   Updated: 2025/01/16 14:57:05 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class PresidentialPardonForm : public AForm
     public:
         PresidentialPardonForm(); //canonical
         PresidentialPardonForm(std::string name);
-        PresidentialPardonForm(PresidentialPardonForm const &src); //canonical
+        PresidentialPardonForm(const PresidentialPardonForm &src); //canonical
 
         ~PresidentialPardonForm();
 

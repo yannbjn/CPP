@@ -6,7 +6,7 @@
 /*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 12:12:25 by frite             #+#    #+#             */
-/*   Updated: 2025/01/13 16:55:11 by frite            ###   ########.fr       */
+/*   Updated: 2025/01/16 14:36:08 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,11 @@ bool	AForm::CanSignAForm(Bureaucrat bureaucrat)
 }
 
 const char *AForm::GradeTooLowException::what(void) const throw(){
-	return ("Grade is too low");
+	return ("Grade is too low. Min grade is 150.");
 }
 
 const char *AForm::GradeTooHighException::what(void) const throw(){
-	return ("Grade is too high");
+	return ("Grade is too high. Max grade is 1.");
 }
 
 std::ostream	&operator<<(std::ostream &o, AForm &AForm)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:21:46 by frite             #+#    #+#             */
-/*   Updated: 2024/12/03 12:59:32 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/01/16 14:29:56 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ elle est propagée vers l'appelant. Ce dernier pourra attraper cette exception e
 dans un bloc try-catch. La gestion des exceptions se fait donc à un niveau supérieur (comme dans le main), 
 là où l'objet est utilisé.*/
 
-Bureaucrat::Bureaucrat(){
+Bureaucrat::Bureaucrat() : _name("no name"), _grade(0){
     std::cout << "Bureaucrat: Default constructor called." << std::endl;
 }
 
@@ -44,11 +44,11 @@ Bureaucrat::~Bureaucrat(){
     //std::cout << "Bureaucrat " << this->_name << ": Destructor called." << std::endl;
 }
 
-std::string Bureaucrat::getName(){
+std::string const Bureaucrat::getName() const{
     return this->_name;
 }
 
-int Bureaucrat::getGrade(){
+int Bureaucrat::getGrade() const{
     return this->_grade;
 }
 
@@ -73,11 +73,11 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs){
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw(){
-    return ("Grade is too High.");
+    return ("Grade is too High. The max grade is 1.");
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw(){
-    return ("Grade is too Low.");
+    return ("Grade is too Low. The min grade is 150.");
 }
 
 std::ostream &operator<<(std::ostream &o, Bureaucrat &bureaucrat){
@@ -85,11 +85,21 @@ std::ostream &operator<<(std::ostream &o, Bureaucrat &bureaucrat){
     return (o);
 }
 
-void    Bureaucrat::SignForm(Form &form){
-    if (form.CanSignForm(*this) == true){
+void    Bureaucrat::SignForm(AForm &form){
+    if (form.CanSignAForm(*this) == true){
         std::cout << this->getName() << " signed " << form.getName() << std::endl;
     }
     else{
         std::cout << this->getName() << " couldn't sign " << form.getName() << " because his grade is " << this->getGrade() << " while we need a Bureaucrat of rank " << form.getReqGrade() << std::endl;
+    }
+}
+
+void    Bureaucrat::executeForm(AForm const &form){
+    try{
+        form.execute(*this);
+        std::cout << getName() << " executed " << form.getName() << " form." << std::endl;
+    }
+    catch (std::exception &e){
+        std::cout << getName() << " couldn't execute " << form.getName() << " form because " << e.what() << std::endl;
     }
 }
