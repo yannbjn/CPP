@@ -6,14 +6,14 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 12:12:25 by frite             #+#    #+#             */
-/*   Updated: 2025/01/22 18:10:52 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/01/22 18:17:43 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
 
-AForm::AForm() : _name("Empty"), _isSigned(false), _ReqGrade(0), _execGrade(0){
+AForm::AForm() : _name("Empty"), _isSigned(false), _ReqGrade(1), _execGrade(1){
 }
 
 AForm::~AForm(){
@@ -64,7 +64,7 @@ int	AForm::getexecGrade() const
 	return _execGrade;
 }
 
-bool	AForm::CanSignAForm(Bureaucrat bureaucrat) 
+bool	AForm::CanSignAForm(Bureaucrat &bureaucrat) 
 {
 	if (bureaucrat.getGrade() <= this->_ReqGrade) 
 	{
@@ -97,3 +97,4 @@ std::ostream	&operator<<(std::ostream &o, AForm &AForm)
 	o << "Required Grade to execute AForm: " << AForm.getexecGrade() << std::endl;
 	return (o);
 }
+

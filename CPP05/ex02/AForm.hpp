@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 12:02:00 by frite             #+#    #+#             */
-/*   Updated: 2025/01/13 12:15:18 by frite            ###   ########.fr       */
+/*   Updated: 2025/01/22 18:16:56 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ class AForm
         int                 getReqGrade(void) const;
         int                 getexecGrade(void) const;
         
-        bool				CanSignAForm(Bureaucrat bureaucrat);
+        bool				CanSignAForm(Bureaucrat &bureaucrat);
         virtual void        execute(Bureaucrat const &executor) const = 0;
 };
 
