@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 14:33:02 by frite             #+#    #+#             */
-/*   Updated: 2025/01/16 14:50:38 by frite            ###   ########.fr       */
+/*   Updated: 2025/01/22 14:54:45 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Bureaucrat
 {
     private:
         std::string const _name;
-        int _grade;
+        int _grade; //higher grade is 1, lowest grade is 150
     
     public:
         Bureaucrat(); //canonical

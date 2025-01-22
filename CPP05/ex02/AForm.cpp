@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 12:12:25 by frite             #+#    #+#             */
-/*   Updated: 2025/01/16 14:36:08 by frite            ###   ########.fr       */
+/*   Updated: 2025/01/22 18:10:52 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ std::ostream	&operator<<(std::ostream &o, AForm &AForm)
 	if (AForm.getIsAFormSigned())
 		o << "Is AForm Signed: True" << std::endl;
 	else
-		o << "Is Dorm Signed: False" << std::endl;
+		o << "Is Form Signed: False" << std::endl;
 	o << "Required Grade to sign AForm: " << AForm.getReqGrade() << std::endl;
 	o << "Required Grade to execute AForm: " << AForm.getexecGrade() << std::endl;
 	return (o);

@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 19:10:53 by yabejani          #+#    #+#             */
-/*   Updated: 2024/12/03 13:03:34 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/01/22 18:10:43 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ std::ostream	&operator<<(std::ostream &o, Form &Form)
 	if (Form.getIsFormSigned())
 		o << "Is Form Signed: True" << std::endl;
 	else
-		o << "Is Dorm Signed: False" << std::endl;
+		o << "Is Form Signed: False" << std::endl;
 	o << "Required Grade to sign Form: " << Form.getReqGrade() << std::endl;
 	o << "Required Grade to execute Form: " << Form.getexecGrade() << std::endl;
 	return (o);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:49:33 by frite             #+#    #+#             */
-/*   Updated: 2025/01/16 17:25:23 by frite            ###   ########.fr       */
+/*   Updated: 2025/01/22 14:47:44 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,16 @@
 #include <limits>
 #include <sstream>
 
-bool	check_name(const std::string &name)
-{
-	for (std::string::const_iterator it = name.begin(); it != name.end(); ++it)
-	{
-		if (!isalpha(*it))
-			return (false);
-	}
-	return (true);
-}
-
 int main(void){
     std::cout << BLUE << "Presidential Form tests:" << RESET << std::endl;
-    Bureaucrat employee("Pres", 1);
+    Bureaucrat employee("Pres", 6);
     PresidentialPardonForm PresidentialForm("Need pardon");
     try{
         employee.SignForm(PresidentialForm);
+        employee.executeForm(PresidentialForm);
+    }
+    catch (std::exception &e){
+        std::cout << BOLD << RED << e.what() << RESET << std::endl;
     }
 }
 
