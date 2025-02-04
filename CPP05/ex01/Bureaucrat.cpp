@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:21:46 by frite             #+#    #+#             */
-/*   Updated: 2024/12/03 12:59:32 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/02/04 16:47:54 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,21 @@ std::ostream &operator<<(std::ostream &o, Bureaucrat &bureaucrat){
     return (o);
 }
 
+// void    Bureaucrat::SignForm(Form &form){
+//     if (form.CanSignForm(*this) == true){
+//         std::cout << this->getName() << " signed " << form.getName() << std::endl;
+//     }
+//     else{
+//         std::cout << this->getName() << " couldn't sign " << form.getName() << " because his grade is " << this->getGrade() << " while we need a Bureaucrat of rank " << form.getReqGrade() << std::endl;
+//     }
+// }
+
 void    Bureaucrat::SignForm(Form &form){
-    if (form.CanSignForm(*this) == true){
-        std::cout << this->getName() << " signed " << form.getName() << std::endl;
+    try{
+        form.CanSignForm(*this);
     }
-    else{
+    catch (Form::GradeTooLowException &e){
         std::cout << this->getName() << " couldn't sign " << form.getName() << " because his grade is " << this->getGrade() << " while we need a Bureaucrat of rank " << form.getReqGrade() << std::endl;
     }
 }
+

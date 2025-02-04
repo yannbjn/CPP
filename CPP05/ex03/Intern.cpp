@@ -6,45 +6,43 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 18:48:33 by yabejani          #+#    #+#             */
-/*   Updated: 2025/01/22 19:25:30 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/02/04 16:04:40 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
-#include "colors.hpp"
 
 Intern::Intern(){
     
 }
 
-Intern::Intern(Intern const &src){
-    *this = src;
+Intern::Intern(const Intern &other){
+    (void)other;
 }
 
-Intern::~Intern(){
-    
-}
-
-Intern  &Intern::operator=(Intern const &rhs){
-    (void)rhs;
+Intern &Intern::operator=(const Intern &other){
+    (void)other;
     return *this;
 }
 
-AForm   *Intern::makeForm(std::string FormName, std::string target){
-    std::string TypeofForm[3] = {"PresidentialPardonForm", "RobotomyRequestForm", "ShrubberyCreationForm"};
-    AForm*   (*CreateForms[3])(std::string) = {
-        [](std::string target) {return new PresidentialPardonForm(target);},
-        [](std::string target) {return new RobotomyRequestForm(target);},
-        [](std::string target) {return new ShrubberyCreationForm(target);}
-    };
-    
+Intern::~Intern(){
+}
+
+AForm* Intern::makeForm(std::string formName, std::string target){
+    AForm   *FormSave = NULL;
+    std::string formTypes[] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
+    AForm   *formCreator[] = {new ShrubberyCreationForm(target), new RobotomyRequestForm(target), new PresidentialPardonForm(target)};
+
     for (int i = 0; i < 3; i++){
-        if (FormName == TypeofForm[i]){
-            std::cout << "Intern creates " << FormName << " form." << std::endl;
-            return CreateForms[i](target);
+        if (formName == formTypes[i]){
+            std::cout << "Intern creates " << formName << " form." << std::endl;
+            FormSave =  formCreator[i];
         }
+        else
+            delete formCreator[i];
     }
-    
-    std::cout << BOLD << RED << "Intern Faild finding the requested form type: " << FormName << std::endl;
-    return NULL;
+    if (!FormSave){
+        std::cout << "Intern couldn't find the rquested form type: " << formName << std::endl;
+    }
+    return FormSave;
 }

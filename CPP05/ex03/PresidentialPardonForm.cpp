@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:14:47 by frite             #+#    #+#             */
-/*   Updated: 2025/01/16 15:31:29 by frite            ###   ########.fr       */
+/*   Updated: 2025/02/04 16:02:30 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const{
     if (this->getexecGrade() < executor.getGrade()){
         throw AForm::GradeTooHighException();
     }
-    std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
+    std::cout << BOLD << GREEN << this->_target << " has been pardoned by Zaphod Beeblebrox." << RESET <<  std::endl;
 }

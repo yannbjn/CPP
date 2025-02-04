@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 14:33:02 by frite             #+#    #+#             */
-/*   Updated: 2025/01/22 14:54:45 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/02/04 16:02:57 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <iostream>
 #include <iomanip>
 #include "AForm.hpp"
+#include "colors.hpp"
 
 class AForm;
 

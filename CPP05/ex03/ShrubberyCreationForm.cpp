@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 13:03:23 by frite             #+#    #+#             */
-/*   Updated: 2025/01/16 15:32:23 by frite            ###   ########.fr       */
+/*   Updated: 2025/02/04 16:04:10 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void    ShrubberyCreationForm::execute(Bureaucrat const &executor) const{
     std::string outf = this->_target + "_shrubbery";
     std::ofstream ofstrm(outf.c_str());
     if (!ofstrm.is_open()){
-        std::cout << "Error opening or creating " << outf << " file." << std::endl;
+        std::cout << BOLD << RED << "Error opening or creating " << outf << " file." << RESET << std::endl;
         return ;
     }
     ofstrm << "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀                \n"
@@ -70,5 +70,5 @@ void    ShrubberyCreationForm::execute(Bureaucrat const &executor) const{
                 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⡉⠉⠁⠀⠀⠘⠓⠀⠀⠀⠀⠀⣀⣞⡿⡉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀              \n"
                 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣶⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀              \n";
     ofstrm.close();
-    std::cout << outf << " printed some trees" << std::endl;
+    std::cout << BOLD << GREEN << outf << " printed some trees" << RESET << std::endl;
 }

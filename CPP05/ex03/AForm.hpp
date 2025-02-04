@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 12:02:00 by frite             #+#    #+#             */
-/*   Updated: 2025/01/22 18:16:56 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/02/04 16:02:43 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class AForm
         AForm(std::string const name, int const _signGrade, int const _execGrade);
         AForm(AForm const &src); //canonical
 
-        ~AForm();
+        virtual ~AForm();
 
         AForm &operator=(AForm const &rhs); //canonical
 
