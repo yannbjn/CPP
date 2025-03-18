@@ -1,10 +1,10 @@
-NAME		=   bureaucrat
+NAME		=   convert
 
 CC			=   c++
 
 FLAG		=   -std=c++98 -Wall -Wextra -Werror -pedantic -g3
 
-C_FILES		=   main.cpp Bureaucrat.cpp
+C_FILES		=   main.cpp ScalarConverter.cpp
 OBJ_DIR		=   builds
 
 OBJS		=   $(addprefix $(OBJ_DIR)/, $(C_FILES:.cpp=.o))

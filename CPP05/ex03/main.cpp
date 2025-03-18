@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 13:36:01 by yabejani          #+#    #+#             */
-/*   Updated: 2025/02/04 16:08:13 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/03/17 16:39:57 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(void)
 {
 	Intern	intern_jack;
 	AForm	*form;
-	std::string formArr[] = {"ShrubberyCreationForm", "RobotomyRequestForm","PresidentialPardonForm", "RandomForm"};
+	std::string formArr[] = {"RandomForm", "ShrubberyCreationForm", "RobotomyRequestForm","PresidentialPardonForm"};
 	for (int i = 0; i <= 3; i++)
 	{
 		form = intern_jack.makeForm(formArr[i], "Bender");

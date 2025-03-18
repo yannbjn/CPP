@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:49:33 by frite             #+#    #+#             */
-/*   Updated: 2025/01/22 18:18:18 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/03/18 14:15:37 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,51 +71,51 @@ int main() {
 //     }
 // }
 
-// // int	main(void)
-// // {
-// // 	std::cout << std::endl;
-// // 	try
-// // 	{
-// // 		Bureaucrat employee("Ajax", 1);
-// // 		// PRESIDENTIAL PARDON FORM
-// // 		std::cout << "Presidential Form: " << std::endl;
-// // 		PresidentialPardonForm presForm("Bad guy");
-// // 		try
-// // 		{
-// // 			employee.SignForm(presForm);
-// // 			employee.executeForm(presForm);
-// // 		}
-// // 		catch (std::exception &e)
-// // 		{
-// // 			std::cout << e.what() << std::endl;
-// // 		}
-// // 		// ROBOTOMY REQUEST FORM
-// // 		std::cout << "Robotomy Form:" << std::endl;
-// // 		RobotomyRequestForm robotForm("Human");
-// // 		try
-// // 		{
-// // 			employee.SignForm(robotForm);
-// // 			employee.executeForm(robotForm);
-// // 		}
-// // 		catch (std::exception &e)
-// // 		{
-// // 			std::cout << e.what() << std::endl;
-// // 		}
-// // 		// SHRUBBERY CREATION FORM
-// // 		std::cout << "Shrubbery Form" << std::endl;
-// // 		ShrubberyCreationForm shrubForm("cool");
-// // 		try
-// // 		{
-// // 			employee.SignForm(shrubForm);
-// // 			employee.executeForm(shrubForm);
-// // 		}
-// // 		catch (std::exception &e)
-// // 		{
-// // 			std::cout << e.what() << std::endl;
-// // 		}
-// // 	}
-// // 	catch (const std::exception &e)
-// // 	{
-// // 		std::cerr << e.what() << '\n';
-// // 	}
-// // }
+// int	main(void)
+// {
+// 	std::cout << std::endl;
+// 	try
+// 	{
+// 		Bureaucrat employee("Ajax", 1);
+// 		// PRESIDENTIAL PARDON FORM
+// 		std::cout << "Presidential Form: " << std::endl;
+// 		PresidentialPardonForm presForm("Bad guy");
+// 		try
+// 		{
+// 			employee.SignForm(presForm);
+// 			employee.executeForm(presForm);
+// 		}
+// 		catch (std::exception &e)
+// 		{
+// 			std::cout << e.what() << std::endl;
+// 		}
+// 		// ROBOTOMY REQUEST FORM
+// 		std::cout << "Robotomy Form:" << std::endl;
+// 		RobotomyRequestForm robotForm("Human");
+// 		try
+// 		{
+// 			employee.SignForm(robotForm);
+// 			employee.executeForm(robotForm);
+// 		}
+// 		catch (std::exception &e)
+// 		{
+// 			std::cout << e.what() << std::endl;
+// 		}
+// 		// SHRUBBERY CREATION FORM
+// 		std::cout << "Shrubbery Form" << std::endl;
+// 		ShrubberyCreationForm shrubForm("cool");
+// 		try
+// 		{
+// 			employee.SignForm(shrubForm);
+// 			employee.executeForm(shrubForm);
+// 		}
+// 		catch (std::exception &e)
+// 		{
+// 			std::cout << e.what() << std::endl;
+// 		}
+// 	}
+// 	catch (const std::exception &e)
+// 	{
+// 		std::cerr << e.what() << '\n';
+// 	}
+// }
