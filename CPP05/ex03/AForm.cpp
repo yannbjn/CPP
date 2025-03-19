@@ -6,20 +6,20 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 12:12:25 by frite             #+#    #+#             */
-/*   Updated: 2025/01/22 18:17:43 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/03/19 16:57:20 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
 
-AForm::AForm() : _name("Empty"), _isSigned(false), _ReqGrade(1), _execGrade(1){
+AForm::AForm() : _name("Empty"), _isSigned(false), _reqGrade(1), _execGrade(1){
 }
 
 AForm::~AForm(){
 }
 
-AForm::AForm(std::string name, int signGrade, int execGrade) : _name(name), _isSigned(false), _ReqGrade(signGrade), _execGrade(execGrade)
+AForm::AForm(std::string name, int signGrade, int execGrade) : _name(name), _isSigned(false), _reqGrade(signGrade), _execGrade(execGrade)
 {	
 	if (signGrade < 1 || execGrade < 1){
 		throw (AForm::GradeTooHighException());
@@ -29,7 +29,7 @@ AForm::AForm(std::string name, int signGrade, int execGrade) : _name(name), _isS
 	}
 }
 
-AForm::AForm(AForm const &src) : _name(src.getName()), _isSigned(false), _ReqGrade(src.getReqGrade()), _execGrade(src.getexecGrade())
+AForm::AForm(AForm const &src) : _name(src.getName()), _isSigned(false), _reqGrade(src.getReqGrade()), _execGrade(src.getexecGrade())
 {
 	*this = src;
 }
@@ -56,7 +56,7 @@ bool	AForm::getIsAFormSigned() const
 
 int	AForm::getReqGrade() const 
 {
-	return _ReqGrade;
+	return _reqGrade;
 }
 
 int	AForm::getexecGrade() const 
@@ -64,9 +64,9 @@ int	AForm::getexecGrade() const
 	return _execGrade;
 }
 
-bool	AForm::CanSignAForm(Bureaucrat &bureaucrat) 
+bool	AForm::beSigned(Bureaucrat &bureaucrat) 
 {
-	if (bureaucrat.getGrade() <= this->_ReqGrade) 
+	if (bureaucrat.getGrade() <= this->_reqGrade) 
 	{
 		_isSigned = true;
 		return (true);

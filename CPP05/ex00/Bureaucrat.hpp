@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 14:33:02 by frite             #+#    #+#             */
-/*   Updated: 2024/10/22 16:38:48 by frite            ###   ########.fr       */
+/*   Updated: 2025/03/19 15:57:20 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <exception>
 #include <iostream>
 #include <iomanip>
+
+#include "colors.hpp"
 
 class Bureaucrat
 {

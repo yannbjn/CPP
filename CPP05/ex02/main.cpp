@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:49:33 by frite             #+#    #+#             */
-/*   Updated: 2025/03/18 14:15:37 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/03/19 14:45:18 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int main() {
         std::cout << "===== Création des Bureaucrates =====" << std::endl;
         Bureaucrat bob("Bob", 50);
         Bureaucrat alice("Alice", 5);
+        Bureaucrat noobBur("Noob", 142);
         
         std::cout << bob << std::endl;
         std::cout << alice << std::endl;
@@ -40,11 +41,20 @@ int main() {
         std::cout << "===== Test Signature =====" << std::endl;
         bob.SignForm(shrubForm);
         alice.SignForm(pardonForm);
-        
+        alice.SignForm(roboForm);
+        noobBur.SignForm(shrubForm); //should work
+        noobBur.SignForm(roboForm); //shouldn't be able to sign
+        // try {
+        //     alice.SignForm(roboForm);
+        // } catch (const std::exception &e) {
+        //     std::cerr << "Erreur lors du test Robotomy : " << e.what() << std::endl;
+        // }
         std::cout << "===== Test Exécution =====" << std::endl;
         bob.executeForm(shrubForm);
         alice.executeForm(pardonForm);
-        alice.executeForm(roboForm); // Alice ne l'a pas signé
+        alice.executeForm(roboForm);
+        noobBur.executeForm(shrubForm);
+        
         
         std::cout << "===== Test Robotomy (50% de chance d'échouer) =====" << std::endl;
         alice.SignForm(roboForm);

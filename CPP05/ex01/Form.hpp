@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 16:44:23 by frite             #+#    #+#             */
-/*   Updated: 2025/02/04 16:41:08 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/03/19 16:55:17 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Form
     private:
         std::string const   _name;
         bool                _isSigned;
-        int const           _ReqGrade;
+        int const           _reqGrade;
         int const           _execGrade;
 
     public:
@@ -54,7 +54,7 @@ class Form
         int                 getReqGrade(void) const;
         int                 getexecGrade(void) const;
         
-        bool				CanSignForm(Bureaucrat bureaucrat);
+        bool				beSigned(Bureaucrat bureaucrat);
 };
 
 std::ostream    &operator<<(std::ostream &o, Form &Form);

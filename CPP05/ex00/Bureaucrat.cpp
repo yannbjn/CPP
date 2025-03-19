@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:21:46 by frite             #+#    #+#             */
-/*   Updated: 2024/12/02 17:58:51 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/03/19 16:07:12 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ elle est propagée vers l'appelant. Ce dernier pourra attraper cette exception e
 dans un bloc try-catch. La gestion des exceptions se fait donc à un niveau supérieur (comme dans le main), 
 là où l'objet est utilisé.*/
 
-Bureaucrat::Bureaucrat(){
+Bureaucrat::Bureaucrat() : _name("Def"), _grade(150){    
     std::cout << "Bureaucrat: Default constructor called." << std::endl;
 }
 
@@ -35,13 +35,12 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
         throw Bureaucrat::GradeTooHighException();
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &src){
-    *this = src;
+Bureaucrat::Bureaucrat(Bureaucrat const &src) : _name(src._name), _grade(src._grade){    
     std::cout << "Bureaucrat: Copy constructor called." << std::endl;
 }
 
 Bureaucrat::~Bureaucrat(){
-    std::cout << "Bureaucrat " << this->_name << ": Destructor called." << std::endl;
+    std::cout << YELLOW << "Bureaucrat " << this->_name << ": Destructor called." << RESET << std::endl;
 }
 
 std::string Bureaucrat::getName(){
@@ -81,6 +80,6 @@ const char *Bureaucrat::GradeTooLowException::what() const throw(){
 }
 
 std::ostream &operator<<(std::ostream &o, Bureaucrat &bureaucrat){
-    o << "Bureaucrat named \"" << bureaucrat.getName() << "\" current grade is " << bureaucrat.getGrade() << "." << std::endl;
+    o << GREEN << "Bureaucrat named \"" << bureaucrat.getName() << "\" current grade is " << bureaucrat.getGrade() << "." << RESET << std::endl;
     return (o);
 }

@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:16:40 by frite             #+#    #+#             */
-/*   Updated: 2025/03/18 14:15:20 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/03/19 13:52:53 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &src) : AForm
 }
 
 RobotomyRequestForm::~RobotomyRequestForm(){
-    //std:;cout << "Robotomy: Default destructor called" << std::endl;
+    //std::cout << "Robotomy: Default destructor called" << std::endl;
 }
 
 
@@ -40,8 +40,15 @@ RobotomyRequestForm   &RobotomyRequestForm::operator=(RobotomyRequestForm const 
 
 void    RobotomyRequestForm::execute(Bureaucrat const &executor) const{
     std::srand(std::time(0)); //setting rand generator on actual time
-    if (!getIsAFormSigned()){
-        throw AForm::GradeTooLowException();
+    // if (!getIsAFormSigned()){
+    //     throw AForm::GradeTooLowException();
+    // }
+    try {
+        getIsAFormSigned();
+    }
+    catch (std::exception &e) {
+        std::cerr << "DEBUG" << e.what() << std::endl;
+        // throw AForm::GradeTooLowException();
     }
     if (this->getexecGrade() < executor.getGrade()){
         throw AForm::GradeTooLowException();

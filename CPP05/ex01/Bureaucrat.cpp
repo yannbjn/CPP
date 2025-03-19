@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:21:46 by frite             #+#    #+#             */
-/*   Updated: 2025/02/04 16:47:54 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/03/19 17:05:43 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void Bureaucrat::incrGrade(){
         throw Bureaucrat::GradeTooHighException();
 }
 
-void Bureaucrat::decrGrade(){
+void Bureaucrat::decrGrade(){ 
     this->_grade++;
     if (this->_grade > 150)
         throw Bureaucrat::GradeTooLowException();
@@ -81,12 +81,12 @@ const char *Bureaucrat::GradeTooLowException::what() const throw(){
 }
 
 std::ostream &operator<<(std::ostream &o, Bureaucrat &bureaucrat){
-    o << "Bureaucrat named \"" << bureaucrat.getName() << "\" current grade is " << bureaucrat.getGrade() << "." << std::endl;
+    o << GREEN << "Bureaucrat named \"" << bureaucrat.getName() << "\" current grade is " << bureaucrat.getGrade() << "." << RESET << std::endl;
     return (o);
 }
 
 // void    Bureaucrat::SignForm(Form &form){
-//     if (form.CanSignForm(*this) == true){
+//     if (form.beSigned(*this) == true){
 //         std::cout << this->getName() << " signed " << form.getName() << std::endl;
 //     }
 //     else{
@@ -96,10 +96,11 @@ std::ostream &operator<<(std::ostream &o, Bureaucrat &bureaucrat){
 
 void    Bureaucrat::SignForm(Form &form){
     try{
-        form.CanSignForm(*this);
+        form.beSigned(*this);
+        std::cout << BOLD << GREEN << this->getName() << " signed " << form.getName() << RESET << std::endl;
     }
     catch (Form::GradeTooLowException &e){
-        std::cout << this->getName() << " couldn't sign " << form.getName() << " because his grade is " << this->getGrade() << " while we need a Bureaucrat of rank " << form.getReqGrade() << std::endl;
+        std::cout << BOLD << RED << this->getName() << " couldn't sign " << form.getName() << " because his grade is " << this->getGrade() << " -> " << e.what() << " : " << " while we need a Bureaucrat of rank " << form.getReqGrade() << RESET << std::endl;
     }
 }
 
