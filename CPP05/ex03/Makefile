@@ -1,4 +1,4 @@
-NAME		=   forms
+NAME		=   intern
 
 CC			=   c++
 

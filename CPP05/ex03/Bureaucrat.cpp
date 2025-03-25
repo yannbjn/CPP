@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:21:46 by frite             #+#    #+#             */
-/*   Updated: 2025/03/19 16:49:02 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/03/25 18:22:39 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ std::ostream &operator<<(std::ostream &o, Bureaucrat &bureaucrat){
     return (o);
 }
 
-void    Bureaucrat::SignForm(AForm &form){
+void    Bureaucrat::signForm(AForm &form){
     if (form.beSigned(*this) == true){
         std::cout << this->getName() << " signed " << form.getName() << std::endl;
     }

@@ -6,7 +6,7 @@
 /*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:49:33 by frite             #+#    #+#             */
-/*   Updated: 2025/03/25 16:12:50 by frite            ###   ########.fr       */
+/*   Updated: 2025/03/25 18:16:20 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,27 +41,26 @@ int main() {
         std::cout << noobPardonForm << std::endl;
         
         std::cout << BOLD << MAGENTA << "===== Test Signature =====" << RESET << std::endl << std::endl;
-        bob.SignForm(shrubForm);
+        bob.signForm(shrubForm);
         std::cout << shrubForm << std::endl;
-        alice.SignForm(pardonForm);
+        alice.signForm(pardonForm);
         std::cout << pardonForm << std::endl;
-        alice.SignForm(roboForm);
+        alice.signForm(roboForm);
         std::cout << roboForm << std::endl;
+        noobBur.signForm(noobPardonForm);
         std::cout << noobPardonForm << std::endl;
         // try {
-        //     alice.SignForm(roboForm);
+        //     alice.signForm(roboForm);
         // } catch (const std::exception &e) {
         //     std::cerr << "Erreur lors du test Robotomy : " << e.what() << std::endl;
         // }
         std::cout << BOLD << MAGENTA << "===== Test Exécution =====" << RESET << std::endl << std::endl;
         bob.executeForm(shrubForm);
         alice.executeForm(pardonForm);
-        alice.executeForm(roboForm);
         noobBur.executeForm(shrubForm);
         
         
         std::cout << BOLD << MAGENTA << "===== Test Robotomy (50% de chance d'échouer) =====" << RESET << std::endl << std::endl;
-        alice.SignForm(roboForm);
         alice.executeForm(roboForm);
     }
     catch (std::exception &e) {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 17:38:02 by frite             #+#    #+#             */
-/*   Updated: 2024/12/03 12:59:09 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/03/25 18:16:20 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(){
 
     //should fail
     try{
-        noobBur.SignForm(Form1);
+        noobBur.signForm(Form1);
     }
     catch(Form::GradeTooLowException &e){
         std::cout << noobBur.getName() << " can't sign the form: \"" << Form1.getName() << "\" " << e.what() << std::endl;
@@ -33,7 +33,7 @@ int main(){
 
     //should be able to sign
     try{
-        OgBur.SignForm(Form1);
+        OgBur.signForm(Form1);
     }
     catch(Form::GradeTooLowException &e){
         std::cout << OgBur.getName() << " can't sign the form: \"" << Form1.getName() << "\" " << e.what() << std::endl;

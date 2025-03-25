@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:21:46 by frite             #+#    #+#             */
-/*   Updated: 2025/03/19 16:49:02 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/03/25 18:16:20 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ std::ostream &operator<<(std::ostream &o, Bureaucrat &bureaucrat){
     return (o);
 }
 
-void    Bureaucrat::SignForm(AForm &form){
+void    Bureaucrat::signForm(AForm &form){
     // if (form.beSigned(*this) == true){
     //     std::cout << this->getName() << " signed " << form.getName() << std::endl;
     // }
@@ -93,19 +93,19 @@ void    Bureaucrat::SignForm(AForm &form){
     // }
     try {
         form.beSigned(*this);
-        std::cout << this->getName() << " signed " << form.getName() << std::endl;
+        std::cout << GREEN << this->getName() << " signed " << form.getName() << RESET << std::endl;
     }
     catch (std::exception &e){
-        std::cerr << this->getName() << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+        std::cerr << RED << this->getName() << " couldn't sign " << form.getName() << " because " << e.what() << RESET << std::endl;
     }
 }
 
 void    Bureaucrat::executeForm(AForm const &form){
     try{
         form.execute(*this);
-        std::cout << getName() << " executed " << form.getName() << " form." << std::endl;
+        std::cout << GREEN << getName() << " executed " << form.getName() << " form." << RESET << std::endl;
     }
     catch (std::exception &e){
-        std::cerr << getName() << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
+        std::cerr << RED << getName() << " couldn't execute " << form.getName() << " because " << e.what() << RESET << std::endl;
     }
 }

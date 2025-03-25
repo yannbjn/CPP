@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 14:33:02 by frite             #+#    #+#             */
-/*   Updated: 2025/03/19 16:26:16 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/03/25 18:16:20 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ class Bureaucrat
 
         void    incrGrade();
         void    decrGrade();
-        void    SignForm(Form &form);
+        void    signForm(Form &form);
         
         class GradeTooHighException : public std::exception{
             public:

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:14:47 by frite             #+#    #+#             */
-/*   Updated: 2025/02/04 16:02:30 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:39:47 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src
 }
 
 PresidentialPardonForm::~PresidentialPardonForm(){
-    //std:;cout << "Presidential: Default destructor called" << std::endl;
+    //std::cout << "Presidential: Default destructor called" << std::endl;
 }
 
 PresidentialPardonForm   &PresidentialPardonForm::operator=(PresidentialPardonForm const &rhs){

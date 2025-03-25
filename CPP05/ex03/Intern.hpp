@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 18:37:28 by yabejani          #+#    #+#             */
-/*   Updated: 2025/01/22 18:59:18 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/03/25 17:50:53 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,9 @@ class Intern
         Intern &operator=(Intern const &rhs);
 
         AForm *makeForm(std::string FormName, std::string target);
+
+        class NoExistFormException : public std::exception{
+            public:
+                virtual const char *what() const throw();
+        };
 };

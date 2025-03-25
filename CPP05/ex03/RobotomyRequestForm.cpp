@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:16:40 by frite             #+#    #+#             */
-/*   Updated: 2025/02/04 16:03:37 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:55:34 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ RobotomyRequestForm::RobotomyRequestForm(){
     //std::cout << "Robotomy: Default constructor called" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string name) : AForm::AForm("Robotomy", 72, 45){
+RobotomyRequestForm::RobotomyRequestForm(std::string name) : AForm::AForm(name, 72, 45){
     this->_target = name;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &src) : AForm::AForm("Robotomy", 72, 45){
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &src) : AForm::AForm(src.getName(), 72, 45){
     //std::cout << "Robotomy: Copy constructor called" << std::endl;
     *this = src;
 }

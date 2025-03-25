@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 12:12:25 by frite             #+#    #+#             */
-/*   Updated: 2025/03/19 16:57:20 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/03/25 17:04:03 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,14 +87,18 @@ const char *AForm::GradeTooHighException::what(void) const throw(){
 
 std::ostream	&operator<<(std::ostream &o, AForm &AForm)
 {
-	o << "AForm: " << AForm.getName() << std::endl;
-	//o << "Signed: " << AForm.getIsAFormSigned() << std::endl;
+	o << std::endl;
+	o << "----------------------------------------" << std::endl;
+	o << "Form name: " << AForm.getName() << std::endl;
+	//o << "Signed: " << Form.getIsFormSigned() << std::endl;
 	if (AForm.getIsAFormSigned())
-		o << "Is AForm Signed: True" << std::endl;
+		o << BLUE << "Is Form Signed: True" << RESET << std::endl;
 	else
-		o << "Is Form Signed: False" << std::endl;
-	o << "Required Grade to sign AForm: " << AForm.getReqGrade() << std::endl;
-	o << "Required Grade to execute AForm: " << AForm.getexecGrade() << std::endl;
+		o << YELLOW << "Is Form Signed: False" << RESET << std::endl;
+	o << "Required Grade to sign Form: " << AForm.getReqGrade() << std::endl;
+	o << "Required Grade to execute Form: " << AForm.getexecGrade() << std::endl;
+	o << "----------------------------------------" << std::endl;
+	o << std::endl;
 	return (o);
 }
 
