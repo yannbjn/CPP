@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:49:33 by frite             #+#    #+#             */
-/*   Updated: 2025/03/19 14:45:18 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:12:50 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,48 +15,52 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
-#include "colors.hpp"
 #include <limits>
 #include <sstream>
 
 int main() {
     try {
-        std::cout << "===== Création des Bureaucrates =====" << std::endl;
+        std::cout << BOLD << MAGENTA << "===== Création des Bureaucrates =====" << RESET << std::endl << std::endl;
         Bureaucrat bob("Bob", 50);
         Bureaucrat alice("Alice", 5);
         Bureaucrat noobBur("Noob", 142);
         
         std::cout << bob << std::endl;
         std::cout << alice << std::endl;
+        std::cout << noobBur << std::endl;
         
-        std::cout << "===== Création des Formulaires =====" << std::endl;
-        ShrubberyCreationForm shrubForm("Garden");
-        RobotomyRequestForm roboForm("Bender");
-        PresidentialPardonForm pardonForm("Marvin");
+        std::cout << BOLD << MAGENTA << "===== Création des Formulaires =====" << RESET << std::endl << std::endl;
+        ShrubberyCreationForm shrubForm("ShrubForm");
+        RobotomyRequestForm roboForm("RobForm");
+        PresidentialPardonForm pardonForm("PresForm");
+        PresidentialPardonForm noobPardonForm("noobPresForm");
         
         std::cout << shrubForm << std::endl;
         std::cout << roboForm << std::endl;
         std::cout << pardonForm << std::endl;
+        std::cout << noobPardonForm << std::endl;
         
-        std::cout << "===== Test Signature =====" << std::endl;
+        std::cout << BOLD << MAGENTA << "===== Test Signature =====" << RESET << std::endl << std::endl;
         bob.SignForm(shrubForm);
+        std::cout << shrubForm << std::endl;
         alice.SignForm(pardonForm);
+        std::cout << pardonForm << std::endl;
         alice.SignForm(roboForm);
-        noobBur.SignForm(shrubForm); //should work
-        noobBur.SignForm(roboForm); //shouldn't be able to sign
+        std::cout << roboForm << std::endl;
+        std::cout << noobPardonForm << std::endl;
         // try {
         //     alice.SignForm(roboForm);
         // } catch (const std::exception &e) {
         //     std::cerr << "Erreur lors du test Robotomy : " << e.what() << std::endl;
         // }
-        std::cout << "===== Test Exécution =====" << std::endl;
+        std::cout << BOLD << MAGENTA << "===== Test Exécution =====" << RESET << std::endl << std::endl;
         bob.executeForm(shrubForm);
         alice.executeForm(pardonForm);
         alice.executeForm(roboForm);
         noobBur.executeForm(shrubForm);
         
         
-        std::cout << "===== Test Robotomy (50% de chance d'échouer) =====" << std::endl;
+        std::cout << BOLD << MAGENTA << "===== Test Robotomy (50% de chance d'échouer) =====" << RESET << std::endl << std::endl;
         alice.SignForm(roboForm);
         alice.executeForm(roboForm);
     }
@@ -66,66 +70,3 @@ int main() {
     
     return 0;
 }
-
-
-// int main(void){
-//     std::cout << BLUE << "Presidential Form tests:" << RESET << std::endl;
-//     Bureaucrat employee("Pres", 6);
-//     PresidentialPardonForm PresidentialForm("Need pardon");
-//     try{
-//         employee.SignForm(PresidentialForm);
-//         employee.executeForm(PresidentialForm);
-//     }
-//     catch (std::exception &e){
-//         std::cout << BOLD << RED << e.what() << RESET << std::endl;
-//     }
-// }
-
-// int	main(void)
-// {
-// 	std::cout << std::endl;
-// 	try
-// 	{
-// 		Bureaucrat employee("Ajax", 1);
-// 		// PRESIDENTIAL PARDON FORM
-// 		std::cout << "Presidential Form: " << std::endl;
-// 		PresidentialPardonForm presForm("Bad guy");
-// 		try
-// 		{
-// 			employee.SignForm(presForm);
-// 			employee.executeForm(presForm);
-// 		}
-// 		catch (std::exception &e)
-// 		{
-// 			std::cout << e.what() << std::endl;
-// 		}
-// 		// ROBOTOMY REQUEST FORM
-// 		std::cout << "Robotomy Form:" << std::endl;
-// 		RobotomyRequestForm robotForm("Human");
-// 		try
-// 		{
-// 			employee.SignForm(robotForm);
-// 			employee.executeForm(robotForm);
-// 		}
-// 		catch (std::exception &e)
-// 		{
-// 			std::cout << e.what() << std::endl;
-// 		}
-// 		// SHRUBBERY CREATION FORM
-// 		std::cout << "Shrubbery Form" << std::endl;
-// 		ShrubberyCreationForm shrubForm("cool");
-// 		try
-// 		{
-// 			employee.SignForm(shrubForm);
-// 			employee.executeForm(shrubForm);
-// 		}
-// 		catch (std::exception &e)
-// 		{
-// 			std::cout << e.what() << std::endl;
-// 		}
-// 	}
-// 	catch (const std::exception &e)
-// 	{
-// 		std::cerr << e.what() << '\n';
-// 	}
-// }

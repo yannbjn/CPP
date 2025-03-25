@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 19:10:53 by yabejani          #+#    #+#             */
-/*   Updated: 2025/03/19 17:07:56 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/03/25 15:10:34 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,9 @@ Form::Form(Form const &src) : _name(src.getName()), _isSigned(false), _reqGrade(
 Form	&Form::operator=(Form const &rhs) 
 {
 	if (this != &rhs) {
-		Form tmp(rhs);
-		*this = tmp;
+		//Form tmp(rhs);
+		//*this = tmp;
+		this->_isSigned = rhs._isSigned;
 	}
 	return *this;
 }

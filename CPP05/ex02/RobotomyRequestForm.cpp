@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:16:40 by frite             #+#    #+#             */
-/*   Updated: 2025/03/19 13:52:53 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:08:30 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ void    RobotomyRequestForm::execute(Bureaucrat const &executor) const{
         throw AForm::GradeTooLowException();
     }
     if (std::rand() % 2 == 0){
-        std::cout << _target << " robotomized succesfully!" << std::endl; 
+        std::cout << GREEN << _target << " robotomized succesfully!" << RESET << std::endl; 
     }
     else {
-        std::cout << "Failed to robotomize " << _target << " !" << std::endl;
+        std::cout << RED << "Failed to robotomize " << _target << " !" << RESET << std::endl;
     }
 }

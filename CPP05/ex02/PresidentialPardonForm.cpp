@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:14:47 by frite             #+#    #+#             */
-/*   Updated: 2025/03/19 14:49:31 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/03/25 15:56:50 by frite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ PresidentialPardonForm::PresidentialPardonForm(){
     //std::cout << "Presidential: Default constructor called" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string name) : AForm::AForm("Presidential", 25, 5){
+PresidentialPardonForm::PresidentialPardonForm(std::string name) : AForm::AForm(name, 25, 5){
     this->_target = name;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src) : AForm::AForm("Presidential", 25, 5){
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src) : AForm::AForm(src.getName(), 25, 5){
     //std::cout << "Presidential: Copy constructor called" << std::endl;
     *this = src;
 }
