@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:16:40 by frite             #+#    #+#             */
-/*   Updated: 2025/03/25 16:08:30 by frite            ###   ########.fr       */
+/*   Updated: 2025/03/26 15:51:22 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void    RobotomyRequestForm::execute(Bureaucrat const &executor) const{
         getIsAFormSigned();
     }
     catch (std::exception &e) {
-        std::cerr << "DEBUG" << e.what() << std::endl;
-        // throw AForm::GradeTooLowException();
+        //std::cerr << "DEBUG" << e.what() << std::endl;
+        throw AForm::FormNotSignedException();
     }
     if (this->getexecGrade() < executor.getGrade()){
         throw AForm::GradeTooLowException();

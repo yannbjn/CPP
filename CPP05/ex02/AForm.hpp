@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 12:02:00 by frite             #+#    #+#             */
-/*   Updated: 2025/03/19 16:55:55 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/03/26 15:38:51 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,11 @@ class AForm
         };
         
         class GradeTooHighException : public std::exception{
+            public:
+                virtual const char *what() const throw();
+        };
+
+        class FormNotSignedException : public std::exception{
             public:
                 virtual const char *what() const throw();
         };

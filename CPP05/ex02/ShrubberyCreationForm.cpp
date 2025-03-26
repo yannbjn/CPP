@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 13:03:23 by frite             #+#    #+#             */
-/*   Updated: 2025/01/16 15:32:23 by frite            ###   ########.fr       */
+/*   Updated: 2025/03/26 15:50:38 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ ShrubberyCreationForm   &ShrubberyCreationForm::operator=(ShrubberyCreationForm 
 
 void    ShrubberyCreationForm::execute(Bureaucrat const &executor) const{
     if (!getIsAFormSigned()){
-        throw AForm::GradeTooLowException(); //Must sign form first
+        throw AForm::FormNotSignedException(); //Must sign form first
     }
     if (this->getexecGrade() < executor.getGrade()){
-        throw AForm::GradeTooHighException(); //Can't exec -> Grade too low
+        throw AForm::GradeTooLowException(); //Can't exec -> Grade too low
     }
     std::string outf = this->_target + "_shrubbery";
     std::ofstream ofstrm(outf.c_str());

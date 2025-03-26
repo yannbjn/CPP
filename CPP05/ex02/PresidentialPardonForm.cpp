@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:14:47 by frite             #+#    #+#             */
-/*   Updated: 2025/03/25 15:56:50 by frite            ###   ########.fr       */
+/*   Updated: 2025/03/26 15:49:22 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ PresidentialPardonForm   &PresidentialPardonForm::operator=(PresidentialPardonFo
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const{
     if (!getIsAFormSigned()){
-        throw AForm::GradeTooLowException();
+        throw AForm::FormNotSignedException();
     }
     if (this->getexecGrade() < executor.getGrade()){
         throw AForm::GradeTooLowException();
