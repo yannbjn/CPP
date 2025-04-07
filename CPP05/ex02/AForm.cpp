@@ -6,7 +6,7 @@
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 12:12:25 by frite             #+#    #+#             */
-/*   Updated: 2025/03/26 15:48:04 by yabejani         ###   ########.fr       */
+/*   Updated: 2025/04/07 15:16:55 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ AForm	&AForm::operator=(AForm const &rhs)
 		this->_isSigned = rhs.getIsAFormSigned();
 	}
 	return *this;
-}
+}       
 
 std::string const	AForm::getName() const 
 {
