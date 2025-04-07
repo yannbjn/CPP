@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/07 18:11:59 by yabejani          #+#    #+#             */
-/*   Updated: 2025/04/07 19:07:46 by yabejani         ###   ########.fr       */
+/*   Created: 2025/04/07 19:03:05 by yabejani          #+#    #+#             */
+/*   Updated: 2025/04/07 19:06:48 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Base.hpp"
 
-#include <string>
-#include <iostream>
-#include <ctime>
-#include <exception>
-#include <cstdlib>
-
-class Base
+int main(void)
 {
-	public:
-		virtual ~Base();
-};
+	for (int i = 0; i < 10; i++)
+	{
+		std::srand(std::time(NULL) + std::clock());
 
-class A: public Base{
-	
-};
+		//identify pointer
+		Base *object = generate();
+		identify(object);
 
-class B: public Base{
-	
-};
+		//identify reference
+		identify(*object);
 
-class C: public Base{
-	
-};
-
-Base*	generate(void);
-void	identify(Base *p);
-void	identify(Base &p);
+		std::cout << "-----------------------" << std::endl;
+		delete(object);
+	}
+	return (0);
+}
