@@ -1,4 +1,4 @@
-NAME		=   whatever
+NAME		=   array
 
 CC			=   c++
 
