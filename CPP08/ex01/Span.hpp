@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frite <frite@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yabejani <yabejani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 16:37:46 by frite             #+#    #+#             */
-/*   Updated: 2025/04/16 17:06:09 by frite            ###   ########.fr       */
+/*   Updated: 2025/04/24 15:18:44 by yabejani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ class Span
         
         template <typename Iterator>
         void addRange(Iterator begin, Iterator end){
-            if (_number.size() + std::distance(begin, end) > _maxSize)
+            if (_numbers.size() + std::distance(begin, end) > _maxSize)
                 throw NotEnoughSpaceInSpanException();
             _numbers.insert(_numbers.end(), begin, end);
         }

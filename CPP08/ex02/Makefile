@@ -1,10 +1,10 @@
-NAME		=   span
+NAME		=   stack
 
 CC			=   c++
 
 FLAG		=   -std=c++98 -Wall -Wextra -Werror -pedantic -g3
 
-C_FILES		=   main.cpp Span.cpp
+C_FILES		=   main.cpp 
 OBJ_DIR		=   builds
 
 OBJS		=   $(addprefix $(OBJ_DIR)/, $(C_FILES:.cpp=.o))
